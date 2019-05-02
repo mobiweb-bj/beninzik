@@ -5,5 +5,11 @@ export const colors = {
 
     secondary: '#64dd17',
     secondaryDark: '#1faa00',
-    primaryLight: '#9cff57',
+    secondaryLight: '#9cff57',
+
+    defaultTextColor: 'white',
+
+    white : '#fff',
+    black : '#000',
+
 }

@@ -1,34 +1,32 @@
 import React from 'react'
+import {HomeNavigator} from  './NavigationComponent'
+
 import {
-    View, Text, Platform, StyleSheet
+    View, Platform, StyleSheet
 } from 'react-native'
 import {colors} from '../shared/colors'
-
-// Default Status Bar
-const StatusBar = () => {
-    return (
-        <View style={styles.statusBar}>
-
-        </View>
-    )
-    
-}
-
-
+import { createAppContainer } from 'react-navigation'
 
 
 class Main extends React.Component {
 
     render(){
 
+        const MainContainer = createAppContainer(HomeNavigator)
+
         return(
             <View style={{flex:1, backgroundColor: colors.primaryLight}}>
-                <StatusBar />
-                <Text>Music App</Text>
+                {/* Status Bar style*/ }
+                <View style={styles.statusBar}>
+                </View> 
+
+                <MainContainer />           
+                
             </View>
         )
     }
 }
+
 
 const styles = StyleSheet.create({
     statusBar: {
