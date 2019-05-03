@@ -1,24 +1,8 @@
 import React from 'react'
-import { View, ScrollView, StyleSheet} from 'react-native'
+import { View, ScrollView, StyleSheet, TouchableOpacity, Alert } from 'react-native'
 import { Image, Button } from 'react-native-elements'
 import {colors} from '../shared/colors'
-
-const Music = () => {
-    return (
-        <Image
-            source={require('../assets/disc.png')}
-            style={styles.discImage}
-            onClick={() => {
-
-                    
-                   
-                }                    
-
-            }
-
-        />
-    )
-}
+import { Audio } from 'expo'
 
 const Answers = () => {
     return(
@@ -56,15 +40,32 @@ class Game extends React.Component {
         }
     }
 
+
     static navigationOptions = {
         title: 'Jouer'
     }
 
     render() {
+        const soundObject = new Expo.Audio.Sound()
+
         return(
             <ScrollView>
-                <Music />
-                
+                <TouchableOpacity
+                    onPress = {async () => {                        
+                        try {
+                            await soundObject.loadAsync(require('../assets/audio/rabbislo.mp3'))
+                            await soundObject.playAsync()
+                            Alert.alert('audio is playing')
+                        } catch(e) {
+                            Alert.alert('erreur music')
+                        }  
+                    }}>
+                    <Image
+                        source={require('../assets/play.png')}
+                        style={styles.discImage}
+                    />
+                </TouchableOpacity>
+
                 <Answers />
             </ScrollView>
         )

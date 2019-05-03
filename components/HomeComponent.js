@@ -1,8 +1,8 @@
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { View, StyleSheet, Text, ScrollView, Slider } from 'react-native'
 import {Button, Image} from 'react-native-elements'
 import {colors} from '../shared/colors'
-import TrackPlayer from 'react-native-track-player';
+
 
 class Home extends React.Component {
 
@@ -10,30 +10,13 @@ class Home extends React.Component {
         title: 'Quiz Music Benin',
     }
 
-    componentDidMount() {
-        // Creates the player
-        TrackPlayer.setupPlayer().then(async () => {
-        
-            // Adds a track to the queue
-            await TrackPlayer.add({
-                id: 'trackId',
-                url: require('../assets/audio/rabbislo.mp3'),
-                title: '',
-                artist: ''
-                
-            });
-        
-            // Starts playing it
-            TrackPlayer.play();
-        
-        });
-
-        return
-    }
 
     render (){
+
+        const AUDIO_CLIP_URL = "../assets/audio/rabbislo.mp3"
+        
         return(
-            <View>
+            <ScrollView>
                 <Image
                     source={require('../assets/logo.png')}
                     style={styles.logo}
@@ -56,7 +39,7 @@ class Home extends React.Component {
                 </Text>
                  */}
  
-            </View>
+            </ScrollView>
         )
     }
 }
