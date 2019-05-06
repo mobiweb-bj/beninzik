@@ -2,6 +2,7 @@ import React from 'react'
 import { View, ScrollView, StyleSheet, TouchableOpacity, Alert, Text } from 'react-native'
 import { Image, Button } from 'react-native-elements'
 import {Root, Toast} from 'native-base'
+import Modal from 'react-native-modal'
 import {colors} from '../shared/colors'
 import { Audio } from 'expo'
 import {QUIZ} from '../shared/quiz'
@@ -18,12 +19,11 @@ class Game extends React.Component {
             quiz : QUIZ,
             currentQuestion: null,
             isCorrectChoice: false,
+            numberOfQuestions: 5,
             score: 0,
-            remainingQuestions: 10,
-            btnBgColor: {
-                correct: 'black',
-                incorrect: 'black'
-            }
+            remainingQuestions: 5,
+            
+            gameOverModal: false
             
         }
     }
@@ -55,7 +55,9 @@ class Game extends React.Component {
 
     gameOver() {
 
-        Alert.alert('Fin du jeu')
+        this.setState({
+            gameOverModal: true
+        })
     }
 
     checkAnswer(choice) {
@@ -180,10 +182,36 @@ class Game extends React.Component {
                                 alignSelf: 'center',
                                 marginTop: 32
                             }}>
-                                Score : {this.state.score}/10
+                                Score : {this.state.score}/{this.state.numberOfQuestions}
                             </Text>
                         </View>
                     </Animatable.View>
+
+                    <Modal isVisible={this.state.gameOverModal}>
+                        <View style={{backgroundColor: colors.white, padding: 32, alignSelf: 'center'}}>
+                            <Text>
+                                Votre Score : {this.state.score}/{this.state.numberOfQuestions}
+                            </Text>
+                            <Button
+                                title='Rejouer'
+                                onPress={() => {this.props.navigation.navigate('Game')}}
+                                buttonStyle={{backgroundColor:colors.primaryDark,margin:16}}
+                            />
+                            <Button
+                                title='Défier un ami'
+                                onPress={() => {}}
+                                buttonStyle={{backgroundColor:colors.secondary, margin: 16}}
+                            />
+                            <Button
+                                title='Version Premium'
+                                onPress={() => {}}
+                                buttonStyle={{backgroundColor:colors.primaryLight, margin: 16}}
+                            />
+
+                            
+                            
+                        </View>
+                    </Modal>
                 </ScrollView>
             </Root>
             
