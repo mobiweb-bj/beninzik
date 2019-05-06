@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, Text, ScrollView, Slider } from 'react-native'
+import { View, StyleSheet, Text, ScrollView, Slider, Alert } from 'react-native'
 import {Button, Image} from 'react-native-elements'
 import {colors} from '../shared/colors'
 
@@ -29,13 +29,14 @@ class Home extends React.Component {
                  />
                  <Button
                     title='A propos du jeu'
-                    onPress={() => {}}
+                    onPress={() => {this.props.navigation.navigate('About')} }
+
                     buttonStyle={styles.aboutButton}
                  />
                  {/*
                  <Text style={{margin:16, marginTop:32, fontSize: 16}}>
                     Testez vos connaisances sur la musique béninoise : 
-                    devinez les artistes et les titres des chansons en écoutant des extraits de musique.
+                    
                 </Text>
                  */}
  
