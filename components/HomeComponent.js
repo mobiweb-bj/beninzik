@@ -2,6 +2,8 @@ import React from 'react'
 import { View, StyleSheet, Text, ScrollView, Slider, Alert } from 'react-native'
 import {Button, Image} from 'react-native-elements'
 import {colors} from '../shared/colors'
+import {AdMobBanner} from 'expo'
+import Ad from './AdComponent'
 
 
 class Home extends React.Component {
@@ -39,6 +41,9 @@ class Home extends React.Component {
                     
                 </Text>
                  */}
+                 <View style={{marginTop: 48}}>
+                    <Ad />
+                 </View>
  
             </ScrollView>
         )
