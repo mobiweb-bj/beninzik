@@ -20,12 +20,14 @@ class Game extends React.Component {
             quiz : QUIZ,
             currentQuestion: null,
             isCorrectChoice: false,
-            numberOfQuestions: 5,
+            numberOfQuestions: 10,
             score: 0,
-            remainingQuestions: 5,
+            remainingQuestions: 10,
             playedQuestions: [],
             
-            gameOverModal: false
+            gameOverModal: false,
+
+            revealAnswer: false
             
         }
     }
@@ -53,10 +55,14 @@ class Game extends React.Component {
             this.setState({
                 currentQuestion: randomQuestion,
             })
+
+           //this.view.bounce(1000).then(() => {})
             
         }
 
     }
+
+  
 
     gameOver() {
 
@@ -64,6 +70,8 @@ class Game extends React.Component {
             gameOverModal: true
         })
     }
+
+
 
     checkAnswer(choice) {
 
@@ -75,13 +83,13 @@ class Game extends React.Component {
             Toast.show({
                 text: 'Bonne Réponse',
                 type: 'success',
-                duration:3000,
+                duration:2500,
                 position: 'bottom'
 
             })
 
             this.setState({
-                isCorrectChoice: true,
+                
                 score: this.state.score + 1
             })
         } else {
@@ -89,33 +97,56 @@ class Game extends React.Component {
             Toast.show({
                 text: 'Mauvaise Réponse',
                 buttonText: '',
-                duration: 3000,
+                duration: 2500,
                 type: 'danger',
                 position: 'bottom'
             })
             
 
             this.setState({
-                isCorrectChoice: false
+                
+                
             })
         }
-        // Wait 3 seconds and display a new question
-        setTimeout(() => {this.getCurrentQuestion()}, 3000)
+
+        setTimeout(() => {
+            this.setState({revealAnswer:false})
+            this.stage.zoomIn(1000)
+            this.getCurrentQuestion()
+
+        }, 2500);
+
+        
         
     }
+
+    btnBgColor(choice) {
+
+        if (!this.state.revealAnswer) {
+            return colors.black
+        } else {
+            if(choice == this.state.currentQuestion.title || choice == this.state.currentQuestion.artist) {
+                return colors.secondary
+
+            } else return colors.primary
+        }
+    }
+
+
     
     // LifeCycle Methods
     componentWillMount () {
         this.getCurrentQuestion()
     }
 
-    componentDidMount () {
-        
-    }
-
     componentWillUnmount () {
         this.stopAudio()
     }
+    
+    componentDidMount () {
+        Toast.show({text: this.state.quiz.length.toString()})
+    }
+    //
 
     async stopAudio() {
         try {
@@ -141,6 +172,9 @@ class Game extends React.Component {
         } 
     }
 
+    // handle Refs
+    handleStageRef = ref => this.stage = ref
+
     render() {
 
         const Answers = () => {
@@ -152,12 +186,12 @@ class Game extends React.Component {
                         <Button
                             key={answer}
                             title={answer}
-                            onPress={() => this.checkAnswer(answer)}
+                            onPress={() => {this.setState({revealAnswer:true}); this.checkAnswer(answer); }}
                             buttonStyle={{
                                 width: 200,
                                 alignSelf: 'center',
                                 margin:8,
-                                backgroundColor: colors.black,
+                                backgroundColor: this.btnBgColor(answer),
                                 opacity: 0.8
 
                             }}                
@@ -171,13 +205,18 @@ class Game extends React.Component {
         return(
             <Root>
                 <ScrollView>
-                    <Animatable.View animation="zoomIn" duration={1000} delay={1000}>
+                    <Animatable.View ref={this.handleStageRef} animation='zoomIn' duration={1000} delay={1000}>
                         <TouchableOpacity
-                            onPress = { () => this.playAudio(this.state.currentQuestion.audio) }>
+                            onPress = { () => {
+                                    this.playAudio(this.state.currentQuestion.audio)
+                                }
+                            }>
                             <Image
+                                
                                 source={require('../assets/play.png')}
                                 style={styles.discImage}
                             />
+                            
                         </TouchableOpacity>
 
                         <View>
@@ -186,7 +225,8 @@ class Game extends React.Component {
                         <View>
                             <Text style={{
                                 alignSelf: 'center',
-                                marginTop: 32
+                                marginTop: 24,
+                                color: colors.primaryLight
                             }}>
                                 Score : {this.state.score}/{this.state.numberOfQuestions}
                             </Text>
@@ -214,6 +254,8 @@ class Game extends React.Component {
                                 title='Défier un ami'
                                 onPress={async () => {
 
+                                    this.setState({gameOverModal: false})
+
                                     let msg = 'Viens tester tes connaissances sur la musique béninoise avec l\'application Quiz BeninZik.\n\n\n Devine les artistes et titres de chansons en écoutant des extraits de musique.\n\n\n';
                                     let url = 'http://mobiweb.bj'
                                     
@@ -235,13 +277,14 @@ class Game extends React.Component {
                             />
                             <Button
                                 title='Version Premium'
-                                onPress={() => {}}
+                                onPress={() => {
+                                    this.setState({gameOverModal: false})
+                                    this.props.navigation.navigate('Premium')
+                                }}
                                 buttonStyle={{backgroundColor:colors.primaryLight, margin: 16}}
                             />                            
                         </View>
-                        <View style={{marginTop: 32}}>
-                            <Ad />
-                        </View>
+                        
                     </Modal>
                 </ScrollView>
             </Root>
@@ -261,8 +304,8 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         alignSelf: 'center',
-        marginTop: 32,
-        marginBottom: 48
+        marginTop: 24,
+        marginBottom: 32
     }
 })
 

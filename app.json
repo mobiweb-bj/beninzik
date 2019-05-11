@@ -23,7 +23,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "bj.mobiweb.quizbeninzik"
+    },
+    "android": {
+      "package": "bj.mobiweb.quizbeninzik"
     }
   }
 }
