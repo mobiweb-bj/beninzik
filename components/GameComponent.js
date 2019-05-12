@@ -27,7 +27,7 @@ class Game extends React.Component {
             
             gameOverModal: false,
 
-            revealAnswer: false
+            revealAnswer: false            
             
         }
     }
@@ -123,15 +123,14 @@ class Game extends React.Component {
     btnBgColor(choice) {
 
         if (!this.state.revealAnswer) {
-            return colors.black
+            return '#fdc33d'
         } else {
             if(choice == this.state.currentQuestion.title || choice == this.state.currentQuestion.artist) {
-                return colors.secondary
+                return colors.secondaryLight
 
-            } else return colors.primary
+            } else return colors.primaryLight
         }
     }
-
 
     
     // LifeCycle Methods
@@ -178,6 +177,7 @@ class Game extends React.Component {
     render() {
 
         const Answers = () => {
+            
             return (
                 this.state.currentQuestion.answers.map((answer) => {
                     
@@ -186,9 +186,11 @@ class Game extends React.Component {
                         <Button
                             key={answer}
                             title={answer}
+                            titleStyle={{color:colors.black}}
                             onPress={() => {this.setState({revealAnswer:true}); this.checkAnswer(answer); }}
                             buttonStyle={{
-                                width: 200,
+                                width: 250,
+                                height:50,
                                 alignSelf: 'center',
                                 margin:8,
                                 backgroundColor: this.btnBgColor(answer),

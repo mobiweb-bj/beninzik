@@ -3,6 +3,583 @@ export const QUIZ = [
 
     {
 
+        id: 'a47JqYR9zjU',        
+        category: 'tradi', 
+        artist: 'Radama-Z',        
+        title: 'Tombola',
+        audio: require('../assets/audio/a47JqYR9zjU.mp3'),        
+        answers: [        
+        'Logozo',        
+        'Bless Antonio',        
+        'Belmonde Z',        
+        'Radama-Z'        
+        ]
+        
+    },
+
+    {
+
+        id: 'y2qYsYd9KZM',        
+        category: 'tradi', 
+        artist: 'Belmonde Z',        
+        title: 'dè dè',
+        audio: require('../assets/audio/y2qYsYd9KZM.mp3'),        
+        answers: [        
+        'Lèvodjo',        
+        'Sewlan',        
+        'Belmonde Z',        
+        'Logozo'        
+        ]
+        
+    },
+
+    {
+
+        id: '6jxV4ExSCN8',        
+        category: 'tradi', 
+        artist: 'Sewlan',        
+        title: 'Honton Vivê',
+        audio: require('../assets/audio/6jxV4ExSCN8.mp3'),        
+        answers: [        
+        'Lèvodjo',        
+        'Sewlan',        
+        'Semevo',        
+        'Super Sonic'        
+        ]
+        
+    },
+
+    {
+
+        id: 'YM1o9YP-I8g',        
+        category: 'tradi', 
+        artist: 'Semevo',        
+        title: 'Baby',
+        audio: require('../assets/audio/YM1o9YP-I8g.mp3'),        
+        answers: [        
+        'Sagbohan Danialou',        
+        'GG Lapino',        
+        'Semevo',        
+        'Don Métok'        
+        ]
+        
+    },
+
+    {
+
+        id: '3SszTMiGgz0',        
+        category: 'urban', 
+        artist: 'GG Lapino',        
+        title: 'Bizo',
+        audio: require('../assets/audio/3SszTMiGgz0.mp3'),        
+        answers: [        
+        'Siano Babassa',        
+        'GG Lapino',        
+        'Kardinal Ricky',        
+        'Richard Flash'        
+        ]
+        
+    },
+
+    {
+
+        id: '2Swf0DXp8tY',        
+        category: 'urban', 
+        artist: 'SIANO BABASSA',        
+        title: 'Agbaman wa',
+        audio: require('../assets/audio/2Swf0DXp8tY.mp3'),        
+        answers: [        
+        'Siano Babassa',        
+        'Crisba',        
+        'Kardinal Ricky',        
+        'First King'        
+        ]
+        
+    }, 
+
+    {
+
+        id: 'srep-788B1I',        
+        category: 'urban', 
+        artist: 'Kardinal Ricky',        
+        title: 'Noukpo',
+        audio: require('../assets/audio/srep-788B1I.mp3'),        
+        answers: [        
+        'Siano Babassa',        
+        'First King',        
+        'Kardinal Ricky',        
+        'Keurblaan'        
+        ]
+        
+    },    
+
+    {
+
+        id: 'xxzAUsZR9Js',        
+        category: 'urban', 
+        artist: 'Keurblaan',        
+        title: 'Sèna',
+        audio: require('../assets/audio/xxzAUsZR9Js.mp3'),        
+        answers: [        
+        'Credo',        
+        'Sirano',        
+        'Bsyd',        
+        'Keurblaan'        
+        ]
+        
+    },
+
+    {
+
+        id: 'duiyobfigfo',        
+        category: 'tradi', 
+        artist: 'Angelique Kidjo',        
+        title: 'Batonga',
+        audio: require('../assets/audio/duiyobfigfo.mp3'),        
+        answers: [        
+        'Batonga',        
+        'Agolo',        
+        'Ovi',        
+        'Gogo'        
+        ]
+        
+    },
+
+    {
+
+        id: 'zqzBFXa2js0',        
+        category: 'urban', 
+        artist: 'Nel Oliver',        
+        title: 'Baby Girl',
+        audio: require('../assets/audio/zqzBFXa2js0.mp3'),        
+        answers: [        
+        'GG Vickey',        
+        'GG Lapino',        
+        'Nel Oliver',        
+        'Wally Badarou'        
+        ]
+        
+    },
+
+    
+    {
+
+        id: 'Ig8zpjzEd3o',        
+        category: 'urban', 
+        artist: 'Don Metok',        
+        title: 'Allez les ecureuils',
+        audio: require('../assets/audio/Ig8zpjzEd3o.mp3'),        
+        answers: [        
+        'Reno King',        
+        'Don Metok',        
+        'GG Lapino',        
+        'Wally Badarou'        
+        ]
+        
+    },
+
+    {
+
+        id: '0pDX1UaZUFg',        
+        category: 'urban', 
+        artist: 'Niyi KosiBeru',        
+        title: 'Saute et cale en l air',
+        audio: require('../assets/audio/0pDX1UaZUFg.mp3'),        
+        answers: [        
+        'Reno King',        
+        'Niyi KosiBeru',        
+        'GG Lapino',        
+        'Don Métok'        
+        ]
+        
+    },    
+
+    {
+
+        id: 'oyZ4oJVh-ws',        
+        category: 'tradi', 
+        artist: 'Reno King',        
+        title: 'Dougbè',
+        audio: require('../assets/audio/oyZ4oJVh-ws.mp3'),        
+        answers: [        
+        'Reno King',        
+        'Rabbi Slo',        
+        'Master Ked',        
+        'Don Métok'        
+        ]
+        
+    },
+
+    {
+
+        id: 'l5QLenpgeCs',        
+        category: 'urban', 
+        artist: 'Escaliers',        
+        title: 'Way Maker Remix',
+        audio: require('../assets/audio/l5QLenpgeCs.mp3'),        
+        answers: [        
+        'Gospel Team',        
+        'Angels',        
+        'Amiral Revers',        
+        'Escaliers'        
+        ]
+        
+    },
+
+    {
+
+        id: 'Zf7sh-CiqGA',        
+        category: 'urban', 
+        artist: 'Amiral Revers',        
+        title: 'Molo Molo',
+        audio: require('../assets/audio/Zf7sh-CiqGA.mp3'),        
+        answers: [        
+        'Familyzik',        
+        'Sirano',        
+        'Amiral Revers',        
+        'Alby'        
+        ]
+        
+    },
+
+    {
+
+        id: 'EbrQiXZ3jm8',        
+        category: 'urban', 
+        artist: 'Sirano',        
+        title: 'C est toi qui m en a ?',
+        audio: require('../assets/audio/EbrQiXZ3jm8.mp3'),        
+        answers: [        
+        'Master Ked',        
+        'Sirano',        
+        'Alby',        
+        'Yves Sedjro'        
+        ]
+        
+    },
+
+    {
+
+        id: 'r9mb1m1LI9M',        
+        category: 'urban', 
+        artist: 'Oluwa Kemy',        
+        title: 'A non fodji',
+        audio: require('../assets/audio/r9mb1m1LI9M.mp3'),        
+        answers: [        
+        'Zeynab',        
+        'Ramou',        
+        'Queen Fumi',        
+        'Oluwa Kemy'        
+        ]
+        
+    },
+
+    {
+
+        id: '9cau2S0Q-do',        
+        category: 'urban', 
+        artist: 'Crisba',        
+        title: 'Bia vivi hou coca',
+        audio: require('../assets/audio/9cau2S0Q-do.mp3'),        
+        answers: [        
+        'Master Ked',        
+        'Crisba',        
+        'Alby',        
+        'Don Amos'        
+        ]
+        
+    },
+
+    {
+
+        id: 'po5cF8ezfLk',        
+        category: 'urban', 
+        artist: 'Don Amos',        
+        title: 'Dagbé dji djan nan fo do',
+        audio: require('../assets/audio/po5cF8ezfLk.mp3'),        
+        answers: [        
+        'Petit Miguélito',        
+        'Ange Ahouangonou',        
+        'Yves Sedjro',        
+        'Don Amos'        
+        ]
+        
+    },
+
+    {
+
+        id: 'sU4UkmPRO30',        
+        category: 'urban', 
+        artist: 'Master Ked',        
+        title: 'Auto Auto',
+        audio: require('../assets/audio/sU4UkmPRO30.mp3'),        
+        answers: [        
+        'First King',        
+        'Crisba',        
+        'Yves Sedjro',        
+        'Master Ked'        
+        ]
+        
+    },
+
+    {
+
+        id: 's7CSklLUepo',        
+        category: 'urban', 
+        artist: 'Yves Sedjro',        
+        title: 'Assitché Dafogbé',
+        audio: require('../assets/audio/s7CSklLUepo.mp3'),        
+        answers: [        
+        'Togbé Yéton',        
+        'Crisba',        
+        'Yves Sedjro',        
+        'Master Ked'        
+        ]
+        
+    },
+
+    {
+
+        id: 'e6xoJ19sYOw',        
+        category: 'urban', 
+        artist: 'Naria',        
+        title: 'Lonlongnin',
+        audio: require('../assets/audio/e6xoJ19sYOw.mp3'),        
+        answers: [        
+        'Naria',        
+        'Ramou',        
+        'Faty',        
+        'Queen Fumi'        
+        ]
+        
+    },
+
+    {
+
+        id: 'xh_W7iyIzpI',        
+        category: 'tradi', 
+        artist: 'Gnonnas Pedro',        
+        title: 'Azo Nkplon',
+        audio: require('../assets/audio/xh_W7iyIzpI.mp3'),        
+        answers: [        
+        'Dakpogan',        
+        'Badarou',        
+        'Lionel Loueke',        
+        'Gnonnas Pedro'        
+        ]
+        
+    },
+
+    {
+
+        id: 'xh_W7iyIzpI',        
+        category: 'urban', 
+        artist: 'Gnonnas Pedro',        
+        title: 'Azo Nkplon',
+        audio: require('../assets/audio/xh_W7iyIzpI.mp3'),        
+        answers: [        
+        'Dakpogan',        
+        'Badarou',        
+        'Lionel Loueke',        
+        'Gnonnas Pedro'        
+        ]
+        
+    },
+
+    {
+
+        id: 'l2ahXXUpFK0',        
+        category: 'urban', 
+        artist: 'Tyaf',        
+        title: 'Douakpo',
+        audio: require('../assets/audio/l2ahXXUpFK0.mp3'),        
+        answers: [        
+        'Vano Baby',        
+        'Togbé Yéton',        
+        'Familyzik',        
+        'Tyaf'        
+        ]
+        
+    },
+
+    {
+
+        id: '-pXxmqxEYsk',        
+        category: 'urban', 
+        artist: 'Vano Baby',        
+        title: 'Madame',
+        audio: require('../assets/audio/-pXxmqxEYsk.mp3'),        
+        answers: [        
+        'Vano Baby',        
+        'Togbé Yéton',        
+        'Tyaf',        
+        'Prissy D'        
+        ]
+        
+    },
+
+    {
+
+        id: 'i-BX8-JXFPg',        
+        category: 'urban', 
+        artist: 'Togbé Yéton',        
+        title: 'Mi nan yi do mon',
+        audio: require('../assets/audio/i-BX8-JXFPg.mp3'),        
+        answers: [        
+        'Kippazo',        
+        'Togbé Yéton',        
+        'Vano Baby',        
+        'Prissy D'        
+        ]
+        
+    },
+
+    {
+
+        id: '2S3Bjus6d3E',        
+        category: 'urban', 
+        artist: 'Apouké',        
+        title: 'Tata',
+        audio: require('../assets/audio/2S3Bjus6d3E.mp3'),        
+        answers: [        
+        'Apouké',        
+        'Yémandja',        
+        'All Bass',        
+        'Sakpata Boyz'        
+        ]
+        
+    },
+
+    {
+
+        id: 'EhgFNnP6hiE',        
+        category: 'urban', 
+        artist: 'All Bass',        
+        title: 'Wanoudé',
+        audio: require('../assets/audio/EhgFNnP6hiE.mp3'),        
+        answers: [        
+        'Ardiess Posse',        
+        'H2O Assouka',        
+        'All Bass',        
+        'Sakpata Boyz'        
+        ]
+        
+    },
+
+    {
+
+        id: 'RIVQjM3Mue4',        
+        category: 'urban', 
+        artist: 'Afafa',        
+        title: 'Tchité',
+        audio: require('../assets/audio/RIVQjM3Mue4.mp3'),        
+        answers: [        
+        'Ardiess Posse',        
+        'H2O Assouka',        
+        'Afafa',        
+        'Sakpata Boyz'        
+        ]
+        
+    },
+
+    {
+
+        id: 'N8X2Dn-Dx-c',        
+        category: 'tradi', 
+        artist: 'Zouley Sangaré',        
+        title: 'Sankiru',
+        audio: require('../assets/audio/N8X2Dn-Dx-c.mp3'),        
+        answers: [        
+        'Princesse Bintou',        
+        'Aminata',        
+        'Assa-Cica',        
+        'Zouley Sangaré'        
+        ]
+        
+    },
+
+    {
+
+        id: '22XvzN5uLuY',        
+        category: 'tradi', 
+        artist: 'Janvier Denagan',        
+        title: 'Guigo',
+        audio: require('../assets/audio/22XvzN5uLuY.mp3'),        
+        answers: [        
+        'Janvier Denagan',        
+        'Vovo Vilaup',        
+        'Pidi Symph',        
+        'Pépé'        
+        ]
+        
+    },
+
+    {
+
+        id: 'tWpRLUm2R9M',        
+        category: 'tradi', 
+        artist: 'Vovo Vilaup',        
+        title: 'Kpo djê kpoyintò ta',
+        audio: require('../assets/audio/tWpRLUm2R9M.mp3'),        
+        answers: [        
+        'Janvier Denagan',        
+        'Vovo Vilaup',        
+        'Pidi Symph',        
+        'Bless Antonio'        
+        ]
+        
+    },
+
+    {
+
+        id: 'mPEdasJNJPs',        
+        category: 'tradi', 
+        artist: 'Stan Tohon',        
+        title: 'Resurrection',
+        audio: require('../assets/audio/mPEdasJNJPs.mp3'),        
+        answers: [        
+        'Nel Oliver',        
+        'Vovo Vilaup',        
+        'Stan Tohon',        
+        'Sagbohan Danialou'        
+        ]
+        
+    },
+
+    {
+
+        id: '3qPF2yMlbsA',        
+        category: 'urban', 
+        artist: 'Kiinzah',        
+        title: 'Kinzoh',
+        audio: require('../assets/audio/3qPF2yMlbsA.mp3'),        
+        answers: [        
+        'Zeynab',        
+        'Kiinzah',        
+        'Ramou',        
+        'Dona Chanvoedo'        
+        ]
+        
+    },
+
+    {
+
+        id: '_kIdkTmMgX8',        
+        category: 'urban', 
+        artist: 'Jupiter Davibe',        
+        title: 'Près de moi',
+        audio: require('../assets/audio/_kIdkTmMgX8.mp3'),        
+        answers: [        
+        'Nikanor',        
+        'Nasty Nesta',        
+        'Jupiter Davibe',        
+        'T!boy'        
+        ]
+        
+    },
+
+    {
+
         id: 'Eav2Q7AWitc',        
         category: 'tradi', 
         artist: 'Ricos Campos',        
@@ -507,7 +1084,7 @@ export const QUIZ = [
         'Sewlan',        
         'Vi-phint',        
         'Goden s Novo',        
-        'Zomandokokpon'        
+        'Zomandokokpon',     
         ]
         
     },
