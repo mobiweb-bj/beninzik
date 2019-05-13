@@ -85,7 +85,7 @@ export const QUIZ = [
 
         id: '2Swf0DXp8tY',        
         category: 'urban', 
-        artist: 'SIANO BABASSA',        
+        artist: 'Siano Babassa',        
         title: 'Agbaman wa',
         audio: require('../assets/audio/2Swf0DXp8tY.mp3'),        
         answers: [        
@@ -358,22 +358,6 @@ export const QUIZ = [
 
         id: 'xh_W7iyIzpI',        
         category: 'tradi', 
-        artist: 'Gnonnas Pedro',        
-        title: 'Azo Nkplon',
-        audio: require('../assets/audio/xh_W7iyIzpI.mp3'),        
-        answers: [        
-        'Dakpogan',        
-        'Badarou',        
-        'Lionel Loueke',        
-        'Gnonnas Pedro'        
-        ]
-        
-    },
-
-    {
-
-        id: 'xh_W7iyIzpI',        
-        category: 'urban', 
         artist: 'Gnonnas Pedro',        
         title: 'Azo Nkplon',
         audio: require('../assets/audio/xh_W7iyIzpI.mp3'),        
@@ -1004,23 +988,6 @@ export const QUIZ = [
         'Alerte a la france',        
         'Alerte au feu',        
         'Aller Retour'        
-        ]
-        
-    }, 
-
-    
-    {
-
-        id: 'jDf_ovAMFGM',        
-        category: 'urban',        
-        title: 'Aller Retour',        
-        artist: 'Blaaz',        
-        audio: require('../assets/audio/jDf_ovAMFGM.mp3'),        
-        answers: [        
-        'Alerte rouge',        
-        'Alerte a la france',        
-        'Alerte au feu',        
-        'Aller retour'        
         ]
         
     }, 

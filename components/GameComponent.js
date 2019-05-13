@@ -19,15 +19,16 @@ class Game extends React.Component {
         this.state = {
             quiz : QUIZ,
             currentQuestion: null,
-            isCorrectChoice: false,
-            numberOfQuestions: 10,
+            isCorrectChoice: null,
+            numberOfQuestions: 20,
             score: 0,
-            remainingQuestions: 10,
+            remainingQuestions: 20,
             playedQuestions: [],
             
             gameOverModal: false,
 
-            revealAnswer: false            
+            revealAnswer: false
+                    
             
         }
     }
@@ -73,12 +74,25 @@ class Game extends React.Component {
 
 
 
-    checkAnswer(choice) {
-
-        // Stop Audio
+    async checkAnswer(choice) {      
+        
         this.stopAudio()
 
         if(choice == this.state.currentQuestion.title || choice == this.state.currentQuestion.artist) {
+
+            const trueSoundObject = new Audio.Sound()
+            try {
+                    await trueSoundObject.loadAsync(
+                    require('../assets/correct.mp3'), 
+                    initialStatus={isLooping:false},
+                    downloadFirst = true)
+    
+                    await trueSoundObject.playAsync()                            
+                                           
+            } catch(e) {
+                console.log('erreur music')
+            } 
+
 
             Toast.show({
                 text: 'Bonne Réponse',
@@ -93,7 +107,20 @@ class Game extends React.Component {
                 score: this.state.score + 1
             })
         } else {
-            
+
+            const falseSoundObject = new Audio.Sound()
+            try {
+                    await falseSoundObject.loadAsync(
+                    require('../assets/incorrect.mp3'), 
+                    initialStatus={isLooping:false},
+                    downloadFirst = true)
+    
+                    await falseSoundObject.playAsync()                            
+                                           
+            } catch(e) {
+                console.log('erreur music')
+            } 
+          
             Toast.show({
                 text: 'Mauvaise Réponse',
                 buttonText: '',
@@ -101,10 +128,8 @@ class Game extends React.Component {
                 type: 'danger',
                 position: 'bottom'
             })
-            
 
-            this.setState({
-                
+            this.setState({                
                 
             })
         }
@@ -123,12 +148,17 @@ class Game extends React.Component {
     btnBgColor(choice) {
 
         if (!this.state.revealAnswer) {
+
             return '#fdc33d'
         } else {
             if(choice == this.state.currentQuestion.title || choice == this.state.currentQuestion.artist) {
+                
                 return colors.secondaryLight
 
-            } else return colors.primaryLight
+            } else {
+                
+                return colors.primaryLight
+            }
         }
     }
 
@@ -137,6 +167,8 @@ class Game extends React.Component {
     componentWillMount () {
         this.getCurrentQuestion()
     }
+    
+
 
     componentWillUnmount () {
         this.stopAudio()
@@ -157,12 +189,12 @@ class Game extends React.Component {
         } 
     }
 
-    async playAudio(audio) {
+    async playAudio(audio, loop) {
 
         try {
             await soundObject.loadAsync(
                 audio, 
-                initialStatus={isLooping:true,},
+                initialStatus={isLooping:loop},
                 downloadFirst = true)
 
             await soundObject.playAsync()                            
@@ -211,7 +243,7 @@ class Game extends React.Component {
                     <Animatable.View ref={this.handleStageRef} animation='zoomIn' duration={1000} delay={1000}>
                         <TouchableOpacity
                             onPress = { () => {
-                                    this.playAudio(this.state.currentQuestion.audio)
+                                    this.playAudio(this.state.currentQuestion.audio, true)
                                 }
                             }>
                             <Image

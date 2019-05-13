@@ -50,6 +50,15 @@ class Premium extends React.Component {
                      
                 />
 
+                <ListItem
+                    key={4}
+                    title='Mode expert (chrono)'
+                    leftIcon={<Icon name='check' />}
+                    bottomDivider={true}
+                    chevron={true}
+                     
+                />
+
                 <Button
                     title='Activer Version Premium'
                     onPress={() => {Alert.alert("Bientôt disponible"); /*this.props.navigation.navigate('Membership')*/}}
