@@ -143,7 +143,8 @@ class Game extends React.Component {
     }
     
     componentDidMount () {
-        Toast.show({text: this.state.quiz.length.toString()})
+        // how many mp3
+        // Toast.show({text: this.state.quiz.length.toString()})
     }
     //
 
