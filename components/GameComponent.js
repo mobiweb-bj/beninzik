@@ -11,6 +11,8 @@ import Ad from './AdComponent'
 
 
 const soundObject = new Audio.Sound()
+const falseSoundObject = new Audio.Sound()
+const trueSoundObject = new Audio.Sound()
 
 class Game extends React.Component {
     constructor(props) {
@@ -80,18 +82,20 @@ class Game extends React.Component {
 
         if(choice == this.state.currentQuestion.title || choice == this.state.currentQuestion.artist) {
 
-            const trueSoundObject = new Audio.Sound()
+            
             try {
                     await trueSoundObject.loadAsync(
                     require('../assets/correct.mp3'), 
                     initialStatus={isLooping:false},
                     downloadFirst = true)
     
-                    await trueSoundObject.playAsync()                            
+                    await trueSoundObject.playAsync() 
+                    setTimeout(async() => await trueSoundObject.unloadAsync(), 1000)                  
                                            
             } catch(e) {
                 console.log('erreur music')
             } 
+            
 
 
             Toast.show({
@@ -108,14 +112,15 @@ class Game extends React.Component {
             })
         } else {
 
-            const falseSoundObject = new Audio.Sound()
+            
             try {
                     await falseSoundObject.loadAsync(
                     require('../assets/incorrect.mp3'), 
                     initialStatus={isLooping:false},
                     downloadFirst = true)
     
-                    await falseSoundObject.playAsync()                            
+                    await falseSoundObject.playAsync()
+                    setTimeout(async() => await falseSoundObject.unloadAsync(), 1000)                       
                                            
             } catch(e) {
                 console.log('erreur music')
@@ -223,7 +228,7 @@ class Game extends React.Component {
                             onPress={() => {this.setState({revealAnswer:true}); this.checkAnswer(answer); }}
                             buttonStyle={{
                                 width: 250,
-                                height:50,
+                                height:42,
                                 alignSelf: 'center',
                                 margin:8,
                                 backgroundColor: this.btnBgColor(answer),

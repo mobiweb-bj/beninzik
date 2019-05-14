@@ -1,5 +1,5 @@
 import React from 'react'
-import {HomeNavigator} from  './NavigationComponent'
+import {MainNavigator} from  './NavigationComponent'
 
 import {
     View, Platform, StyleSheet
@@ -12,7 +12,7 @@ class Main extends React.Component {
 
     render(){
 
-        const MainContainer = createAppContainer(HomeNavigator)
+        const MainContainer = createAppContainer(MainNavigator)
 
         return(
             <View style={{flex:1, backgroundColor: colors.primaryLight}}>
