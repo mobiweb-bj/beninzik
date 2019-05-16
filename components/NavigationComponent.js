@@ -7,6 +7,7 @@ import Premium from './PremiumComponent'
 
 // youtube
 import YoutubeHome from './youtube/YoutubeHomeComponent'
+import YoutubePlayer from './youtube/YoutubePlayerComponent'
 
 import {ScrollView, StyleSheet, View, Text, Image} from 'react-native'
 import { createStackNavigator, createDrawerNavigator, DrawerItems, SafeAreaView } from 'react-navigation'
@@ -53,8 +54,16 @@ const HomeNavigator = createStackNavigator(
 
 const YoutubeNavigator = createStackNavigator(
     {
-        YoutubeHome: YoutubeHome
+        YoutubeHome: {
+            screen: YoutubeHome, 
+
+        },
+        YoutubePlayer: {
+            screen: YoutubePlayer, 
+
+        }
     },
+    
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
@@ -67,7 +76,8 @@ const YoutubeNavigator = createStackNavigator(
                     name="menu" size={24} 
                     color= 'white'
                     onPress={ () => navigation.toggleDrawer() } /></View> 
-        })
+        }),
+        initialRouteName: 'YoutubeHome'
     }
 )
 

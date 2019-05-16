@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "expo": "^32.0.0",
+    "expo-video-player": "^1.2.0",
     "native-base": "^2.12.1",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
@@ -16,8 +17,12 @@
     "react-native-easy-grid": "^0.2.1",
     "react-native-elements": "^1.1.0",
     "react-native-modal": "^10.0.0",
+    "react-native-responsive-screen": "^1.2.2",
     "react-native-webview": "^5.8.1",
-    "react-navigation": "^3.9.1"
+    "react-native-youtube": "^1.1.0",
+    "react-native-youtube-info": "^0.0.4",
+    "react-navigation": "^3.9.1",
+    "react-youtube": "^7.9.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
