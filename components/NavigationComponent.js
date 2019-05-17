@@ -14,6 +14,35 @@ import { createStackNavigator, createDrawerNavigator, DrawerItems, SafeAreaView 
 import {Icon} from 'react-native-elements'
 import {colors} from '../shared/colors'
 
+const YoutubeNavigator = createStackNavigator(
+    {
+        YoutubeHome: {
+            screen: YoutubeHome, 
+
+        },
+        YoutubePlayer: {
+            screen: YoutubePlayer, 
+
+        }
+    },
+    
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: colors.primary
+            },
+            headerTitleStyle: {
+                color: colors.defaultTextColor
+            },
+            headerLeft: <View style={{margin:7}}><Icon 
+                    name="menu" size={24} 
+                    color= 'white'
+                    onPress={ () => navigation.toggleDrawer() } /></View> 
+        }),
+        initialRouteName: 'YoutubeHome'
+    }
+)
+
 const HomeNavigator = createStackNavigator(
     {
         Home: {
@@ -52,34 +81,7 @@ const HomeNavigator = createStackNavigator(
     }
 )
 
-const YoutubeNavigator = createStackNavigator(
-    {
-        YoutubeHome: {
-            screen: YoutubeHome, 
 
-        },
-        YoutubePlayer: {
-            screen: YoutubePlayer, 
-
-        }
-    },
-    
-    {
-        defaultNavigationOptions: ({navigation}) => ({
-            headerStyle: {
-                backgroundColor: colors.primary
-            },
-            headerTitleStyle: {
-                color: colors.defaultTextColor
-            },
-            headerLeft: <View style={{margin:7}}><Icon 
-                    name="menu" size={24} 
-                    color= 'white'
-                    onPress={ () => navigation.toggleDrawer() } /></View> 
-        }),
-        initialRouteName: 'YoutubeHome'
-    }
-)
 
 const drawerHeader = (props) => (
     <ScrollView>
@@ -97,17 +99,6 @@ const drawerHeader = (props) => (
 
 export const MainNavigator = createDrawerNavigator(
     {
-        MusicQuiz: {
-            screen: HomeNavigator,
-            navigationOptions: {
-                title: 'Music Quiz',
-                drawerLabel: 'Music Quiz',
-                drawerIcon: () => (<Icon
-                    type='font-awesome'
-                    name='music'
-                    />)
-            }
-        },
         BeninTube: {
             screen: YoutubeNavigator,
             navigationOptions: {
@@ -119,6 +110,19 @@ export const MainNavigator = createDrawerNavigator(
                     />)
             }
         },
+        
+        MusicQuiz: {
+            screen: HomeNavigator,
+            navigationOptions: {
+                title: 'Music Quiz',
+                drawerLabel: 'Music Quiz',
+                drawerIcon: () => (<Icon
+                    type='font-awesome'
+                    name='music'
+                    />)
+            }
+        },
+        
     },
     {
         drawerBackgroundColor: colors.white,

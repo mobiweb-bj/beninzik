@@ -1,8 +1,25 @@
 import React from 'react'
 import {View, Text, ScrollView} from 'react-native'
-import {Card, Icon, Button} from 'react-native-elements'
+import {Card, Icon, Button, ListItem, Image} from 'react-native-elements'
 import {Grid, Row, Col} from 'react-native-easy-grid'
 import { colors } from '../../shared/colors';
+
+const AudioItem = (props) => {
+    return (
+        <ListItem
+            
+            title={props.video.title} 
+              
+            leftAvatar={{ source: { uri: 'https://i.ytimg.com/vi/'+ props.video.videoId +'/0.jpg' } }}       
+            subtitle={props.video.views + ' vues'}
+            bottomDivider={true}
+            chevron={
+                <Icon type='font-awesome' name='music' color={colors.primaryLight} />
+            }
+            onPress={props.listen}
+        />
+    )
+}
 
 const VideoItem = (props) => {
     return (
@@ -74,12 +91,17 @@ class YoutubeHome extends React.Component {
     render() { 
         
         const VideoItems = () => this.state.videos.map(v => ( 
-            
-            <VideoItem
-                key={v.id}
-                video={v}
-                watchVideo={() => this.props.navigation.navigate('YoutubePlayer')}
-            />           
+            <View style={{marginTop:25}} key={v.id}> 
+
+                <AudioItem
+                    
+                    video={v}
+                    listen={() => this.props.navigation.navigate('YoutubePlayer', {
+                        videoInfos : v
+                    })}
+                />                
+  
+            </View>       
         ))
 
         return (

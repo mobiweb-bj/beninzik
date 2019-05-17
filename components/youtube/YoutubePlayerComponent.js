@@ -1,10 +1,12 @@
 import React from 'react'
-import {View, ScrollView, StyleSheet} from 'react-native'
-import { Video } from 'expo'
-import { VideoPlayer } from 'expo-video-player'
+import {View, ScrollView } from 'react-native'
+import { Audio, Video } from 'expo'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import {  Icon, Text } from 'react-native-elements';
+import {  Icon, Text, Card } from 'react-native-elements';
+import {Grid, Row, Col} from 'react-native-easy-grid'
 import {colors} from '../../shared/colors'
+
+const soundObject = new Audio.Sound()
 
 class YoutubePlayer extends React.Component {
 
@@ -12,85 +14,135 @@ class YoutubePlayer extends React.Component {
         super(props)
 
         this.state = {
-            isPlaying: true,
+            isAudioPlaying: false,
         }
     }
 
     static navigationOptions = {
-        title: 'Lecture Video'
+        title: 'Lecture Musique'
     }
 
+    componentDidMount() {
+        
+    }
+
+    
     componentWillUnmount () {
-        this.stopPlayer()
+        this.stopAudio()
     }
 
-    async stopPlayer() {
-        await this.player.stopAsync()
+
+    async playAudio(id) {       
+        
+       if(!this.state.isAudioPlaying) {
+
+            try {               
+                await soundObject.loadAsync(
+                    {uri: 'https://mobiweb.bj/mobileapps/musicQuiz/medias/mp3/'+id}, 
+                    initialStatus={isLooping:false},
+                    downloadFirst = true) 
+
+                    await soundObject.playAsync()                
+                                            
+            } catch(e) {
+                console.log('erreur music')
+            }
+
+       } else {
+
+            this.stopAudio()
+
+           // this.stopAudio()
+       }
+        
+
     }
 
-    // handle Refs
-    handlePlayerRef = ref => this.player = ref
+    async pauseAudio() {
+        try {
+            await soundObject.pauseAsync()                       
+                                       
+        } catch(e) {
+            console.log('erreur music')
+        } 
+    }
+
+ 
+
+    async stopAudio() {
+
+        try {
+            await soundObject.unloadAsync()                       
+                                       
+        } catch(e) {
+            console.log('erreur music')
+        } 
+    }
+   
 
     render (){
-        let video = {
+
+        let defaultVideo = {
             title : 'Dibi Dobo - Veze Veze',
             image: 'https://i.ytimg.com/vi/MqRMAQMycFc/0.jpg',
-            uri: 'https://mobiweb.bj/mobileapps/musicQuiz/medias/mp4/MqRMAQMycFc.mp4'
+            uri: 'https://mobiweb.bj/mobileapps/musicQuiz/medias/mp3/tWpRLUm2R9M'
         }
- 
+
+        const videoInfos = this.props.navigation.getParam('videoInfos', defaultVideo ) 
 
         return(
             <ScrollView>
+
+                <Card 
+                    image={{uri: 'https://i.ytimg.com/vi/'+ videoInfos.videoId +'/0.jpg'}} >                                                   
                 
-                <View style={styles.videoContainer}>
+                    <Row>
+                        <Text>
+                            {videoInfos.title}
+                        </Text>
+                    </Row>
                     
-                    <Video
-                        ref={this.handlePlayerRef}
-                        source={{ uri: video.uri }}
-                        rate={1.0}
-                        usePoster={true}
-                        posterSource={{uri: video.image}}
-                        volume={1.0}
-                        isMuted={false}
-                        resizeMode="cover"
-                        shouldPlay={this.state.isPlaying}
-                        isLooping={false}
-                        style={{width: wp('95%'), height: 300, marginTop:10}}
-                    />
-                    
-                    
-                    <Text h4 style={{margin:10}}>
-                        {video.title}
-                    </Text>
-                    
-                    
-                </View>
-                <View style={{position:'absolute', top:250, left: 25 }}>
-                    <Icon
-                        type='font-awesome'
-                        name={this.state.isPlaying ? 'pause' : 'play'}
-                        color={colors.black}     
-                        size={18}
-                        raised                   
-                        onPress={() => this.setState({isPlaying:!this.state.isPlaying})}
-                    />
-                </View>
-                
+                    <Row>
+                        <Col>
+                            <Icon
+                                type='font-awesome'
+                                name={this.state.isAudioPlaying ? 'stop' : 'play'}
+                                color={colors.primaryLight}
+                                size={15}
+                                raised
+                                onPress={() => {
+                                    this.playAudio(videoInfos.videoId)
+                                    this.setState({isAudioPlaying:!this.state.isAudioPlaying})
+                                }}
+                            />
+                        </Col>
+                        <Col>
+                            <Icon
+                                type='font-awesome'
+                                name='download'
+                                color={colors.secondaryLight}
+                                size={15}
+                                raised
+                            />
+                        </Col>
+                        <Col>
+                            <Icon
+                                type='font-awesome'
+                                name='heart'
+                                color='orange'
+                                size={15}
+                                raised
+                            />
+                        </Col>
+                    </Row>
+ 
+                </Card>
                        
             </ScrollView>
         )
     }
 }
 
-const styles = StyleSheet.create({
-    videoContainer: {
-        width: wp('100%'), 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        borderWidth: 0.8,
-        borderRadius: 0.5,
-        borderColor: colors.black,
-    }
-})
+
 
 export default YoutubePlayer
