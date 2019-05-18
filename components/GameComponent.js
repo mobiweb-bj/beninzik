@@ -198,7 +198,7 @@ class Game extends React.Component {
 
         try {
             await soundObject.loadAsync(
-                audio, 
+                {uri: 'https://mobiweb.bj/mobileapps/musicQuiz/quiz-mp3/' + audio + '.mp3'}, 
                 initialStatus={isLooping:loop},
                 downloadFirst = true)
 
@@ -248,7 +248,7 @@ class Game extends React.Component {
                     <Animatable.View ref={this.handleStageRef} animation='zoomIn' duration={1000} delay={1000}>
                         <TouchableOpacity
                             onPress = { () => {
-                                    this.playAudio(this.state.currentQuestion.audio, true)
+                                    this.playAudio(this.state.currentQuestion.id, true)
                                 }
                             }>
                             <Image

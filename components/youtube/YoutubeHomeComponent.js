@@ -90,7 +90,7 @@ class YoutubeHome extends React.Component {
 
     render() { 
         
-        const VideoItems = () => this.state.videos.map(v => ( 
+        const VideoItems = () => this.state.videos.slice(0, 50).map(v => ( 
             <View style={{marginTop:25}} key={v.id}> 
 
                 <AudioItem
