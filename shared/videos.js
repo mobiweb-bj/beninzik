@@ -1,4 +1,6 @@
-export const fetchVideos = () => fetch('http://mobiweb.bj/mobileapps/musicQuiz/videos.php')
+export function fetchVideos () {
+    fetch('http://mobiweb.bj/mobileapps/musicQuiz/videos.php')
     .then(response => response.json())
-    .then(data => data)
+    .then(data => this.setState({videos:data}))
     .catch(err => console.log(err))
+}

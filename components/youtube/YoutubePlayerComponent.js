@@ -1,8 +1,8 @@
 import React from 'react'
-import {View, ScrollView } from 'react-native'
+import {View, ScrollView, Alert } from 'react-native'
 import { Audio, Video } from 'expo'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import {  Icon, Text, Card } from 'react-native-elements';
+import {  Icon, Text, Card, ListItem } from 'react-native-elements';
 import {Grid, Row, Col} from 'react-native-easy-grid'
 import {colors} from '../../shared/colors'
 
@@ -14,6 +14,7 @@ class YoutubePlayer extends React.Component {
         super(props)
 
         this.state = {
+            videos:[],
             isAudioPlaying: false,
         }
     }
@@ -22,8 +23,15 @@ class YoutubePlayer extends React.Component {
         title: 'Lecture Musique'
     }
 
+    fetchVideos() {
+        fetch('http://mobiweb.bj/mobileapps/musicQuiz/videos.php')
+        .then(response => response.json())
+        .then(data => this.setState({videos:data}))
+        .catch(err => console.log(err))
+    }
+
     componentDidMount() {
-        
+        this.fetchVideos()
     }
 
     
@@ -78,6 +86,10 @@ class YoutubePlayer extends React.Component {
             console.log('erreur music')
         } 
     }
+
+    getVideoObject (id) {
+        return this.state.videos.filter(v => (v.videoId == id))[0]
+    }
    
 
     render (){
@@ -89,6 +101,48 @@ class YoutubePlayer extends React.Component {
         }
 
         const videoInfos = this.props.navigation.getParam('videoInfos', defaultVideo ) 
+        const related = JSON.parse(videoInfos.related)
+
+        // console.log(related[0].title + ' - ' + related[0].id)
+
+        var i = 0;
+        
+        const RelatedVideos = (props) => related.map((r) => {
+            i++;
+            if(r != null && this.getVideoObject(r.id) != null) {
+                
+                return (
+                    
+                    <ListItem
+                        key={i}              
+                        title={r.title}                        
+                        leftAvatar={{ source: { uri: 'https://i.ytimg.com/vi/'+ r.id +'/0.jpg' } }}       
+                        subtitle={''}
+                        bottomDivider={true}
+                        chevron={
+                            <Icon type='font-awesome' name='music' color={colors.primaryLight} />
+                        }
+                        onPress={()=> { 
+                            this.stopAudio()
+
+                            this.props.navigation.push('YoutubePlayer', {
+                                videoInfos: this.getVideoObject(r.id)
+                            })
+
+                        }}
+                    />
+                    
+                    
+                )
+            } else {
+                return (
+                    <View>
+
+                    </View>
+                )
+            }
+        })
+        
 
         return(
             <ScrollView>
@@ -137,6 +191,15 @@ class YoutubePlayer extends React.Component {
                     </Row>
  
                 </Card>
+                <View style={{marginTop:50}}>
+
+                    <Card title='Musiques similaires'>
+
+                        <RelatedVideos />        
+
+                    </Card>
+                </View>
+                
                        
             </ScrollView>
         )
