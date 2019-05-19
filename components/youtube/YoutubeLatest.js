@@ -1,6 +1,6 @@
 import React from 'react'
-import {ScrollView, View, Text} from 'react-native'
-import {Card, Icon, Button, ListItem, Image} from 'react-native-elements'
+import {ScrollView, View, Text, ActivityIndicator} from 'react-native'
+import {Icon, ListItem} from 'react-native-elements'
 import { colors } from '../../shared/colors';
 
 const AudioItem = (props) => {
@@ -27,7 +27,7 @@ class YoutubeLatest extends React.Component {
         super(props)
 
         this.state = {
-
+            loading:true,
             videos: []
         }
     }
@@ -39,7 +39,7 @@ class YoutubeLatest extends React.Component {
     fetchVideos() {
         fetch('http://mobiweb.bj/mobileapps/musicQuiz/videos.php')
         .then(response => response.json())
-        .then(data => this.setState({videos:data}))
+        .then(data => this.setState({videos:data, loading:false}))
         .catch(err => console.log(err))
     }
 
@@ -63,13 +63,30 @@ class YoutubeLatest extends React.Component {
             </View>       
         ))
 
-        return (
-            <ScrollView>
-                
-                <AudioItems />
+        if(this.state.loading) {
 
-            </ScrollView>
-        )
+            return(
+                <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+                    <ActivityIndicator />
+                    <Text>Chargement en cours...</Text>
+                </View>
+                
+            )
+
+        } else {
+
+            return (
+            
+                <ScrollView>
+                    
+                    <AudioItems />
+    
+                </ScrollView>
+            )
+
+        }
+
+        
     }
 }
 

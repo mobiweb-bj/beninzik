@@ -31,7 +31,7 @@ const YoutubeNavigator = createStackNavigator(
                     type='font-awesome'
                     name="arrow-left" size={24} 
                     color= 'white'
-                    onPress={ () => navigation.navigate('YoutubeHome') } /></View> 
+                    onPress={ () => navigation.goBack() } /></View> 
             })
 
         },
@@ -42,7 +42,7 @@ const YoutubeNavigator = createStackNavigator(
                     type='font-awesome'
                     name="arrow-left" size={24} 
                     color= 'white'
-                    onPress={ () => navigation.navigate('YoutubeHome') } /></View> 
+                    onPress={ () => navigation.goBack() } /></View> 
             })
         }
     },
@@ -83,7 +83,7 @@ const HomeNavigator = createStackNavigator(
                     type='font-awesome'
                     name="arrow-left" size={24} 
                     color= 'white'
-                    onPress={ () => navigation.navigate('Home') } /></View> 
+                    onPress={ () => navigation.goBack() } /></View> 
             })
         },
         About: {
