@@ -26,10 +26,24 @@ const YoutubeNavigator = createStackNavigator(
         },
         YoutubePlayer: {
             screen: YoutubePlayer, 
+            navigationOptions: ({navigation}) => ({
+                headerLeft: <View style={{margin:7}}><Icon 
+                    type='font-awesome'
+                    name="arrow-left" size={24} 
+                    color= 'white'
+                    onPress={ () => navigation.navigate('YoutubeHome') } /></View> 
+            })
 
         },
         YoutubeSearch:{
-            screen: YoutubeSearch
+            screen: YoutubeSearch,
+            navigationOptions: ({navigation}) => ({
+                headerLeft: <View style={{margin:7}}><Icon 
+                    type='font-awesome'
+                    name="arrow-left" size={24} 
+                    color= 'white'
+                    onPress={ () => navigation.navigate('YoutubeHome') } /></View> 
+            })
         }
     },
     
@@ -64,6 +78,13 @@ const HomeNavigator = createStackNavigator(
         },
         Game: {
             screen: Game,
+            navigationOptions: ({navigation}) => ({
+                headerLeft: <View style={{margin:7}}><Icon 
+                    type='font-awesome'
+                    name="arrow-left" size={24} 
+                    color= 'white'
+                    onPress={ () => navigation.navigate('Home') } /></View> 
+            })
         },
         About: {
             screen: About

@@ -7,9 +7,22 @@ import { colors } from '../../shared/colors';
 
 
 
-const YoutubeHome = createMaterialTopTabNavigator ({
-    YoutubeLatest: YoutubeLatest,
-    YoutubeFavorites: YoutubeFavorites
-})
+const YoutubeHome = createMaterialTopTabNavigator (
+    {
+        YoutubeLatest: YoutubeLatest,
+        YoutubeFavorites: YoutubeFavorites
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            tabBarOptions: {
+                style: {
+                    backgroundColor: colors.secondaryDark,
+                    
+                }
+            }
+
+        })
+    }
+)
 
 export default createAppContainer(YoutubeHome)
