@@ -6,8 +6,7 @@ export const QUIZ = [
         id: 'a47JqYR9zjU',        
         category: 'tradi', 
         artist: 'Radama-Z',        
-        title: 'Tombola',
-        audio: require('../assets/audio/a47JqYR9zjU.mp3'),        
+        title: 'Tombola',        
         answers: [        
         'Logozo',        
         'Bless Antonio',        
@@ -22,8 +21,7 @@ export const QUIZ = [
         id: 'y2qYsYd9KZM',        
         category: 'tradi', 
         artist: 'Belmonde Z',        
-        title: 'dè dè',
-        audio: require('../assets/audio/y2qYsYd9KZM.mp3'),        
+        title: 'dè dè',      
         answers: [        
         'Lèvodjo',        
         'Sewlan',        
@@ -38,8 +36,7 @@ export const QUIZ = [
         id: '6jxV4ExSCN8',        
         category: 'tradi', 
         artist: 'Sewlan',        
-        title: 'Honton Vivê',
-        audio: require('../assets/audio/6jxV4ExSCN8.mp3'),        
+        title: 'Honton Vivê',      
         answers: [        
         'Lèvodjo',        
         'Sewlan',        
@@ -54,8 +51,7 @@ export const QUIZ = [
         id: 'YM1o9YP-I8g',        
         category: 'tradi', 
         artist: 'Semevo',        
-        title: 'Baby',
-        audio: require('../assets/audio/YM1o9YP-I8g.mp3'),        
+        title: 'Baby',       
         answers: [        
         'Sagbohan Danialou',        
         'GG Lapino',        
@@ -70,8 +66,7 @@ export const QUIZ = [
         id: '3SszTMiGgz0',        
         category: 'urban', 
         artist: 'GG Lapino',        
-        title: 'Bizo',
-        audio: require('../assets/audio/3SszTMiGgz0.mp3'),        
+        title: 'Bizo',     
         answers: [        
         'Siano Babassa',        
         'GG Lapino',        
@@ -86,8 +81,7 @@ export const QUIZ = [
         id: '2Swf0DXp8tY',        
         category: 'urban', 
         artist: 'Siano Babassa',        
-        title: 'Agbaman wa',
-        audio: require('../assets/audio/2Swf0DXp8tY.mp3'),        
+        title: 'Agbaman wa',      
         answers: [        
         'Siano Babassa',        
         'Crisba',        
@@ -102,8 +96,7 @@ export const QUIZ = [
         id: 'srep-788B1I',        
         category: 'urban', 
         artist: 'Kardinal Ricky',        
-        title: 'Noukpo',
-        audio: require('../assets/audio/srep-788B1I.mp3'),        
+        title: 'Noukpo',       
         answers: [        
         'Siano Babassa',        
         'First King',        
@@ -118,8 +111,7 @@ export const QUIZ = [
         id: 'xxzAUsZR9Js',        
         category: 'urban', 
         artist: 'Keurblaan',        
-        title: 'Sèna',
-        audio: require('../assets/audio/xxzAUsZR9Js.mp3'),        
+        title: 'Sèna',        
         answers: [        
         'Credo',        
         'Sirano',        
@@ -134,8 +126,7 @@ export const QUIZ = [
         id: 'duiyobfigfo',        
         category: 'tradi', 
         artist: 'Angelique Kidjo',        
-        title: 'Batonga',
-        audio: require('../assets/audio/duiyobfigfo.mp3'),        
+        title: 'Batonga',      
         answers: [        
         'Batonga',        
         'Agolo',        
@@ -150,8 +141,7 @@ export const QUIZ = [
         id: 'zqzBFXa2js0',        
         category: 'urban', 
         artist: 'Nel Oliver',        
-        title: 'Baby Girl',
-        audio: require('../assets/audio/zqzBFXa2js0.mp3'),        
+        title: 'Baby Girl',        
         answers: [        
         'GG Vickey',        
         'GG Lapino',        
@@ -167,8 +157,7 @@ export const QUIZ = [
         id: 'Ig8zpjzEd3o',        
         category: 'urban', 
         artist: 'Don Metok',        
-        title: 'Allez les ecureuils',
-        audio: require('../assets/audio/Ig8zpjzEd3o.mp3'),        
+        title: 'Allez les ecureuils',      
         answers: [        
         'Reno King',        
         'Don Metok',        
@@ -183,8 +172,7 @@ export const QUIZ = [
         id: '0pDX1UaZUFg',        
         category: 'urban', 
         artist: 'Niyi KosiBeru',        
-        title: 'Saute et cale en l air',
-        audio: require('../assets/audio/0pDX1UaZUFg.mp3'),        
+        title: 'Saute et cale en l air',       
         answers: [        
         'Reno King',        
         'Niyi KosiBeru',        
@@ -199,8 +187,7 @@ export const QUIZ = [
         id: 'oyZ4oJVh-ws',        
         category: 'tradi', 
         artist: 'Reno King',        
-        title: 'Dougbè',
-        audio: require('../assets/audio/oyZ4oJVh-ws.mp3'),        
+        title: 'Dougbè',        
         answers: [        
         'Reno King',        
         'Rabbi Slo',        
@@ -215,8 +202,7 @@ export const QUIZ = [
         id: 'l5QLenpgeCs',        
         category: 'urban', 
         artist: 'Escaliers',        
-        title: 'Way Maker Remix',
-        audio: require('../assets/audio/l5QLenpgeCs.mp3'),        
+        title: 'Way Maker Remix',      
         answers: [        
         'Gospel Team',        
         'Angels',        
@@ -231,8 +217,7 @@ export const QUIZ = [
         id: 'Zf7sh-CiqGA',        
         category: 'urban', 
         artist: 'Amiral Revers',        
-        title: 'Molo Molo',
-        audio: require('../assets/audio/Zf7sh-CiqGA.mp3'),        
+        title: 'Molo Molo',      
         answers: [        
         'Familyzik',        
         'Sirano',        
@@ -247,8 +232,7 @@ export const QUIZ = [
         id: 'EbrQiXZ3jm8',        
         category: 'urban', 
         artist: 'Sirano',        
-        title: 'C est toi qui m en a ?',
-        audio: require('../assets/audio/EbrQiXZ3jm8.mp3'),        
+        title: 'C est toi qui m en a ?',      
         answers: [        
         'Master Ked',        
         'Sirano',        
@@ -263,8 +247,7 @@ export const QUIZ = [
         id: 'r9mb1m1LI9M',        
         category: 'urban', 
         artist: 'Oluwa Kemy',        
-        title: 'A non fodji',
-        audio: require('../assets/audio/r9mb1m1LI9M.mp3'),        
+        title: 'A non fodji',       
         answers: [        
         'Zeynab',        
         'Ramou',        
@@ -279,8 +262,7 @@ export const QUIZ = [
         id: '9cau2S0Q-do',        
         category: 'urban', 
         artist: 'Crisba',        
-        title: 'Bia vivi hou coca',
-        audio: require('../assets/audio/9cau2S0Q-do.mp3'),        
+        title: 'Bia vivi hou coca',       
         answers: [        
         'Master Ked',        
         'Crisba',        
@@ -295,8 +277,7 @@ export const QUIZ = [
         id: 'po5cF8ezfLk',        
         category: 'urban', 
         artist: 'Don Amos',        
-        title: 'Dagbé dji djan nan fo do',
-        audio: require('../assets/audio/po5cF8ezfLk.mp3'),        
+        title: 'Dagbé dji djan nan fo do',      
         answers: [        
         'Petit Miguélito',        
         'Ange Ahouangonou',        
@@ -311,8 +292,7 @@ export const QUIZ = [
         id: 'sU4UkmPRO30',        
         category: 'urban', 
         artist: 'Master Ked',        
-        title: 'Auto Auto',
-        audio: require('../assets/audio/sU4UkmPRO30.mp3'),        
+        title: 'Auto Auto',       
         answers: [        
         'First King',        
         'Crisba',        
@@ -327,8 +307,7 @@ export const QUIZ = [
         id: 's7CSklLUepo',        
         category: 'urban', 
         artist: 'Yves Sedjro',        
-        title: 'Assitché Dafogbé',
-        audio: require('../assets/audio/s7CSklLUepo.mp3'),        
+        title: 'Assitché Dafogbé',       
         answers: [        
         'Togbé Yéton',        
         'Crisba',        
@@ -343,8 +322,7 @@ export const QUIZ = [
         id: 'e6xoJ19sYOw',        
         category: 'urban', 
         artist: 'Naria',        
-        title: 'Lonlongnin',
-        audio: require('../assets/audio/e6xoJ19sYOw.mp3'),        
+        title: 'Lonlongnin',       
         answers: [        
         'Naria',        
         'Ramou',        
@@ -359,8 +337,7 @@ export const QUIZ = [
         id: 'xh_W7iyIzpI',        
         category: 'tradi', 
         artist: 'Gnonnas Pedro',        
-        title: 'Azo Nkplon',
-        audio: require('../assets/audio/xh_W7iyIzpI.mp3'),        
+        title: 'Azo Nkplon',        
         answers: [        
         'Dakpogan',        
         'Badarou',        
@@ -375,8 +352,7 @@ export const QUIZ = [
         id: 'l2ahXXUpFK0',        
         category: 'urban', 
         artist: 'Tyaf',        
-        title: 'Douakpo',
-        audio: require('../assets/audio/l2ahXXUpFK0.mp3'),        
+        title: 'Douakpo',        
         answers: [        
         'Vano Baby',        
         'Togbé Yéton',        
@@ -391,8 +367,7 @@ export const QUIZ = [
         id: '-pXxmqxEYsk',        
         category: 'urban', 
         artist: 'Vano Baby',        
-        title: 'Madame',
-        audio: require('../assets/audio/-pXxmqxEYsk.mp3'),        
+        title: 'Madame',      
         answers: [        
         'Vano Baby',        
         'Togbé Yéton',        
@@ -407,8 +382,7 @@ export const QUIZ = [
         id: 'i-BX8-JXFPg',        
         category: 'urban', 
         artist: 'Togbé Yéton',        
-        title: 'Mi nan yi do mon',
-        audio: require('../assets/audio/i-BX8-JXFPg.mp3'),        
+        title: 'Mi nan yi do mon',      
         answers: [        
         'Kippazo',        
         'Togbé Yéton',        
@@ -423,8 +397,7 @@ export const QUIZ = [
         id: '2S3Bjus6d3E',        
         category: 'urban', 
         artist: 'Apouké',        
-        title: 'Tata',
-        audio: require('../assets/audio/2S3Bjus6d3E.mp3'),        
+        title: 'Tata',     
         answers: [        
         'Apouké',        
         'Yémandja',        
@@ -439,8 +412,7 @@ export const QUIZ = [
         id: 'EhgFNnP6hiE',        
         category: 'urban', 
         artist: 'All Bass',        
-        title: 'Wanoudé',
-        audio: require('../assets/audio/EhgFNnP6hiE.mp3'),        
+        title: 'Wanoudé',        
         answers: [        
         'Ardiess Posse',        
         'H2O Assouka',        
@@ -455,8 +427,7 @@ export const QUIZ = [
         id: 'RIVQjM3Mue4',        
         category: 'urban', 
         artist: 'Afafa',        
-        title: 'Tchité',
-        audio: require('../assets/audio/RIVQjM3Mue4.mp3'),        
+        title: 'Tchité',       
         answers: [        
         'Ardiess Posse',        
         'H2O Assouka',        
@@ -471,8 +442,7 @@ export const QUIZ = [
         id: 'N8X2Dn-Dx-c',        
         category: 'tradi', 
         artist: 'Zouley Sangaré',        
-        title: 'Sankiru',
-        audio: require('../assets/audio/N8X2Dn-Dx-c.mp3'),        
+        title: 'Sankiru',       
         answers: [        
         'Princesse Bintou',        
         'Aminata',        
@@ -487,8 +457,7 @@ export const QUIZ = [
         id: '22XvzN5uLuY',        
         category: 'tradi', 
         artist: 'Janvier Denagan',        
-        title: 'Guigo',
-        audio: require('../assets/audio/22XvzN5uLuY.mp3'),        
+        title: 'Guigo',       
         answers: [        
         'Janvier Denagan',        
         'Vovo Vilaup',        
@@ -503,8 +472,7 @@ export const QUIZ = [
         id: 'tWpRLUm2R9M',        
         category: 'tradi', 
         artist: 'Vovo Vilaup',        
-        title: 'Kpo djê kpoyintò ta',
-        audio: require('../assets/audio/tWpRLUm2R9M.mp3'),        
+        title: 'Kpo djê kpoyintò ta',       
         answers: [        
         'Janvier Denagan',        
         'Vovo Vilaup',        
@@ -519,8 +487,7 @@ export const QUIZ = [
         id: 'mPEdasJNJPs',        
         category: 'tradi', 
         artist: 'Stan Tohon',        
-        title: 'Resurrection',
-        audio: require('../assets/audio/mPEdasJNJPs.mp3'),        
+        title: 'Resurrection',        
         answers: [        
         'Nel Oliver',        
         'Vovo Vilaup',        
@@ -535,8 +502,7 @@ export const QUIZ = [
         id: '3qPF2yMlbsA',        
         category: 'urban', 
         artist: 'Kiinzah',        
-        title: 'Kinzoh',
-        audio: require('../assets/audio/3qPF2yMlbsA.mp3'),        
+        title: 'Kinzoh',        
         answers: [        
         'Zeynab',        
         'Kiinzah',        
@@ -551,8 +517,7 @@ export const QUIZ = [
         id: '_kIdkTmMgX8',        
         category: 'urban', 
         artist: 'Jupiter Davibe',        
-        title: 'Près de moi',
-        audio: require('../assets/audio/_kIdkTmMgX8.mp3'),        
+        title: 'Près de moi',      
         answers: [        
         'Nikanor',        
         'Nasty Nesta',        
@@ -567,8 +532,7 @@ export const QUIZ = [
         id: 'Eav2Q7AWitc',        
         category: 'tradi', 
         artist: 'Ricos Campos',        
-        title: 'Senini',
-        audio: require('../assets/audio/Eav2Q7AWitc.mp3'),        
+        title: 'Senini',        
         answers: [        
         'Si tu savais',        
         'Tanga',        
@@ -583,8 +547,7 @@ export const QUIZ = [
         id: 'bs3q3uGattk',        
         category: 'urban', 
         artist: 'H2O',        
-        title: 'Tanga',
-        audio: require('../assets/audio/bs3q3uGattk.mp3'),        
+        title: 'Tanga',       
         answers: [        
         'Akwè',        
         'Tanga',        
@@ -599,8 +562,7 @@ export const QUIZ = [
         id: 'bs3q3uGattk',        
         category: 'urban', 
         artist: 'H2O',        
-        title: 'Tanga',
-        audio: require('../assets/audio/bs3q3uGattk.mp3'),        
+        title: 'Tanga',       
         answers: [        
         'Afafa',        
         'Sakpata Boys',        
@@ -615,8 +577,7 @@ export const QUIZ = [
         id: 'XVYsqUXAsyA',        
         category: 'urban', 
         artist: 'Robinson Sipa',        
-        title: 'Agbando',
-        audio: require('../assets/audio/XVYsqUXAsyA.mp3'),        
+        title: 'Agbando',      
         answers: [        
         'Bless Antonio',        
         'Panthere Noire',        
@@ -631,8 +592,7 @@ export const QUIZ = [
         id: '5KrAto9MUpE',        
         category: 'urban', 
         artist: 'Panthere Noire',        
-        title: 'Un beau jour',
-        audio: require('../assets/audio/5KrAto9MUpE.mp3'),        
+        title: 'Un beau jour',       
         answers: [        
         'Bless Antonio',        
         'Panthere Noire',        
@@ -647,8 +607,7 @@ export const QUIZ = [
         id: 'tgl8XaKp18w',        
         category: 'urban', 
         artist: 'Bless Antonio',        
-        title: 'Beninoiserie',
-        audio: require('../assets/audio/tgl8XaKp18w.mp3'),        
+        title: 'Beninoiserie',       
         answers: [        
         'Bless Antonio',        
         'Panthere Noire',        
@@ -663,8 +622,7 @@ export const QUIZ = [
         id: 'cKBK-Oy1dTk',        
         category: 'urban', 
         artist: 'Foule Stop',        
-        title: 'Agbaza mimin',
-        audio: require('../assets/audio/cKBK-Oy1dTk.mp3'),        
+        title: 'Agbaza mimin',        
         answers: [        
         'Weziza',        
         'Panthere Noire',        
@@ -679,8 +637,7 @@ export const QUIZ = [
         id: 'M9Fn9sahja4',        
         category: 'urban', 
         artist: 'Ardiess Posse',        
-        title: 'Le temps passe',
-        audio: require('../assets/audio/M9Fn9sahja4.mp3'),        
+        title: 'Le temps passe',        
         answers: [        
         'La vie va bien trop vite',        
         'Le temps passe',        
@@ -695,8 +652,7 @@ export const QUIZ = [
         id: 'M9Fn9sahja4',        
         category: 'urban', 
         artist: 'Ardiess Posse',        
-        title: 'Le temps passe',
-        audio: require('../assets/audio/M9Fn9sahja4.mp3'),        
+        title: 'Le temps passe',       
         answers: [        
         'Ardiess Posse',        
         'All Bass',        
@@ -711,8 +667,7 @@ export const QUIZ = [
         id: 'jXbt0CVqUaQ',        
         category: 'urban', 
         artist: 'Diamant Noir',        
-        title: 'Mets toi à l aise',
-        audio: require('../assets/audio/jXbt0CVqUaQ.mp3'),        
+        title: 'Mets toi à l aise',      
         answers: [        
         'Ardiess Posse',        
         'All Bass',        
@@ -727,8 +682,7 @@ export const QUIZ = [
         id: '01r2CfYiOmw',        
         category: 'tradi', 
         artist: 'Sagbohan Danialou',        
-        title: 'A Mon noude houn dou',
-        audio: require('../assets/audio/01r2CfYiOmw.mp3'),        
+        title: 'A Mon noude houn dou',       
         answers: [        
         'A Mon noude houn dou',        
         'Profitons de la vie',        
@@ -743,8 +697,7 @@ export const QUIZ = [
         id: 'MF7qoIag4yg',        
         category: 'urban', 
         artist: 'Dibi Dobo',        
-        title: 'Wini Wini',
-        audio: require('../assets/audio/MF7qoIag4yg.mp3'),        
+        title: 'Wini Wini',      
         answers: [        
         'Soyimavo',        
         'Wini Wini',        
@@ -759,8 +712,7 @@ export const QUIZ = [
         id: 'Pc4qUjlIJp8',        
         category: 'urban', 
         artist: 'Alby',        
-        title: 'Akwè',
-        audio: require('../assets/audio/Pc4qUjlIJp8.mp3'),        
+        title: 'Akwè',       
         answers: [        
         'First King',        
         'Alby',        
@@ -775,8 +727,7 @@ export const QUIZ = [
         id: '8jEJ0lkyEGA',        
         category: 'urban',        
         title: 'Tré lé lé',        
-        artist: 'T!boy',        
-        audio: require('../assets/audio/8jEJ0lkyEGA.mp3'),        
+        artist: 'T!boy',         
         answers: [        
         'First King',        
         'E-ray',        
@@ -791,8 +742,7 @@ export const QUIZ = [
         id: 'HW3q3NVXyx4',        
         category: 'urban',        
         title: 'Familyzik',        
-        artist: 'Coller chimenter',        
-        audio: require('../assets/audio/HW3q3NVXyx4.mp3'),        
+        artist: 'Coller chimenter',     
         answers: [        
         'Elifaz',        
         'E-ray',        
@@ -807,8 +757,7 @@ export const QUIZ = [
         id: '_BRdJpcb3uI',        
         category: 'urban',        
         title: 'Djamile Mama Gao',        
-        artist: 'T aimer oklm',        
-        audio: require('../assets/audio/_BRdJpcb3uI.mp3'),        
+        artist: 'T aimer oklm',         
         answers: [        
         'Elifaz',        
         'Djamile Mama Gao',        
@@ -823,8 +772,7 @@ export const QUIZ = [
         id: 'MqRMAQMycFc',        
         category: 'urban',        
         title: 'Vezé Vezé',        
-        artist: 'Kmikaz ft Dibi Dobo',        
-        audio: require('../assets/audio/MqRMAQMycFc.mp3'),        
+        artist: 'Kmikaz ft Dibi Dobo',         
         answers: [        
         'Kmikaz ft Dibi Dobo',        
         'T-boy ft Dibi Dobo',        
@@ -839,8 +787,7 @@ export const QUIZ = [
         id: 'nbbhCey95cc',        
         category: 'tradi',        
         title: 'Agbadja',        
-        artist: 'Gbéssi zolawadji',        
-        audio: require('../assets/audio/nbbhCey95cc.mp3'),        
+        artist: 'Gbéssi zolawadji',      
         answers: [        
         'Ange ahouangonon',        
         'Gbéssi zolawadji',        
@@ -856,7 +803,6 @@ export const QUIZ = [
         category: 'tradi',        
         title: 'Miwu jesus sin tole',        
         artist: 'Zola Rémi',        
-        audio: require('../assets/audio/WKP01_UZ5UM.mp3'),        
         answers: [        
         'Zola Rémi',        
         'Alokpon',        
@@ -871,8 +817,7 @@ export const QUIZ = [
         id: 'V-POKykHhwc',        
         category: 'urban',        
         title: 'Ogbe to jesu me',        
-        artist: 'Johny sourou',        
-        audio: require('../assets/audio/V-POKykHhwc.mp3'),        
+        artist: 'Johny sourou',       
         answers: [        
         'Appolinaire Soglo',        
         'John Migan',        
@@ -887,8 +832,7 @@ export const QUIZ = [
         id: 'OpE6kixAVmo',        
         category: 'urban',        
         title: 'Yissénon',        
-        artist: 'Anna Teko',        
-        audio: require('../assets/audio/OpE6kixAVmo.mp3'),        
+        artist: 'Anna Teko',       
         answers: [        
         'Yissénon',        
         'Yesu vivi',        
@@ -902,8 +846,7 @@ export const QUIZ = [
         id: 'rsUZAWvVFGw',        
         category: 'urban',        
         title: 'Louez louez',        
-        artist: 'Dona Chanvoedo',        
-        audio: require('../assets/audio/rsUZAWvVFGw.mp3'),        
+        artist: 'Dona Chanvoedo',       
         answers: [        
         'Gloire à Dieu',        
         'Louez louez',        
@@ -917,8 +860,7 @@ export const QUIZ = [
         id: 'RFcoQyY6PpI',        
         category: 'urban',        
         title: 'Djo assoutché do',        
-        artist: 'Konan',        
-        audio: require('../assets/audio/RFcoQyY6PpI.mp3'),        
+        artist: 'Konan',         
         answers: [        
         'Konan',        
         'Faty',        
@@ -933,8 +875,7 @@ export const QUIZ = [
         id: 'LjXxQn3UWAg',        
         category: 'urban',        
         title: 'Nkoyi assoutche hoho',        
-        artist: 'Konan feat Nelly',        
-        audio: require('../assets/audio/LjXxQn3UWAg.mp3'),        
+        artist: 'Konan feat Nelly',       
         answers: [        
         'Polygamie',        
         'Assoutché',        
@@ -949,8 +890,7 @@ export const QUIZ = [
         id: 'jxNWoH-pMAY',        
         category: 'urban',        
         title: 'Locataire de mari',        
-        artist: 'Vi-phint feat Dossi',        
-        audio: require('../assets/audio/jxNWoH-pMAY.mp3'),        
+        artist: 'Vi-phint feat Dossi',       
         answers: [        
         'Polygamie',        
         'Propriétaire de mari',        
@@ -965,8 +905,7 @@ export const QUIZ = [
         id: 'GWP2ws1GNAc',        
         category: 'urban',        
         title: 'Vevo',        
-        artist: 'Nelly',        
-        audio: require('../assets/audio/GWP2ws1GNAc.mp3'),        
+        artist: 'Nelly',      
         answers: [        
         'Edwige Hessou',        
         'Liss Mouss',        
@@ -981,8 +920,7 @@ export const QUIZ = [
         id: 'jDf_ovAMFGM',        
         category: 'urban',        
         title: 'Aller Retour',        
-        artist: 'Blaaz',        
-        audio: require('../assets/audio/jDf_ovAMFGM.mp3'),        
+        artist: 'Blaaz',      
         answers: [        
         'Alerte rouge',        
         'Alerte a la france',        
@@ -998,7 +936,6 @@ export const QUIZ = [
         category: 'urban',        
         title: 'Sehoue',        
         artist: 'Sedami',        
-        audio: require('../assets/audio/iGMWRFU4jy0.mp3'),        
         answers: [        
         'Lady G',        
         'Dedome',        
@@ -1014,7 +951,6 @@ export const QUIZ = [
         category: 'urban',        
         title: 'Malonoho',        
         artist: 'Pharaon',        
-        audio: require('../assets/audio/HI1NVOi4Pek.mp3'),        
         answers: [        
         'Prince Guedessi',        
         'Bernadin',        
@@ -1030,7 +966,6 @@ export const QUIZ = [
         category: 'urban',        
         title: 'Nou hanyan hanyan',        
         artist: 'Super sonic',        
-        audio: require('../assets/audio/F4Cv5iUFhQo.mp3'),        
         answers: [        
         'Super sonic',        
         'Houessi',        
@@ -1046,7 +981,6 @@ export const QUIZ = [
         category: 'urban',        
         title: 'Djimey',        
         artist: 'Zomandokokpon',        
-        audio: require('../assets/audio/L9qkMzwX5R8.mp3'),        
         answers: [        
         'Sewlan',        
         'Vi-phint',        
@@ -1061,8 +995,7 @@ export const QUIZ = [
         id: 'Zg5sRLkseBE',        
         category: 'urban',        
         title: 'Atchouta',        
-        artist: 'Goden s Novo',        
-        audio: require('../assets/audio/Zg5sRLkseBE.mp3'),        
+        artist: 'Goden s Novo',       
         answers: [        
         'Willy Mignon',        
         'Richard Flash',        
@@ -1077,8 +1010,7 @@ export const QUIZ = [
         id: 'aOJLxItrHVo',        
         category: 'tradi',        
         title: 'Gantché xo',        
-        artist: 'Norberka',        
-        audio: require('../assets/audio/aOJLxItrHVo.mp3'),        
+        artist: 'Norberka',       
         answers: [        
         'Mawu wa nudé',        
         'Gigo',        
@@ -1094,7 +1026,6 @@ export const QUIZ = [
         category: 'urban',        
         title: 'Vive les mariés',        
         artist: 'GG Vickey',        
-        audio: require('../assets/audio/Y9zz-UYkq8k.mp3'),        
         answers: [        
         'Petit Miguelito',        
         'GG Vickey',        
@@ -1109,8 +1040,7 @@ export const QUIZ = [
         id: '_0P-2rHQZMw',        
         category: 'urban',        
         title: 'Sè dé',        
-        artist: 'Assa-Cica',        
-        audio: require('../assets/audio/_0P-2rHQZMw.mp3'),        
+        artist: 'Assa-Cica',       
         answers: [        
         'Assa-Cica',        
         'Alohou',        
@@ -1126,8 +1056,7 @@ export const QUIZ = [
         id: 'S10OZqd8DS0',        
         category: 'urban',        
         title: 'Sè ba ho',        
-        artist: 'Poly-rythmo',        
-        audio: require('../assets/audio/S10OZqd8DS0.mp3'),        
+        artist: 'Poly-rythmo',       
         answers: [        
         'Gangbe',        
         'Poly-rythmo',        
@@ -1143,8 +1072,7 @@ export const QUIZ = [
         id: '4bTAO_rFAsU',        
         category: 'tradi',        
         title: 'Ahouaninhe',        
-        artist: 'Pelagie la vibreuse',        
-        audio: require('../assets/audio/4bTAO_rFAsU.mp3'),        
+        artist: 'Pelagie la vibreuse',       
         answers: [        
         'Ahouaninhe',        
         'Adingban',        
@@ -1160,7 +1088,6 @@ export const QUIZ = [
         category: 'urban',        
         title: 'Fana fana',        
         artist: 'Sessime',        
-        audio: require('../assets/audio/prO4vJ5Vcj0.mp3'),        
         answers: [        
         'Oluwa kemy',        
         'Dossi',        
@@ -1176,8 +1103,7 @@ export const QUIZ = [
         id: '7OaDKJ6aRd0',        
         category: 'urban',        
         title: 'I love you',        
-        artist: 'Atinkpon',        
-        audio: require('../assets/audio/7OaDKJ6aRd0.mp3'),        
+        artist: 'Atinkpon',         
         answers: [        
         'Atinkpon',        
         'Gbèzé',        
@@ -1192,8 +1118,7 @@ export const QUIZ = [
         id: 'JEEmMAT3BD8',        
         category: 'urban',        
         title: 'Faya',        
-        artist: 'Don genial',        
-        audio: require('../assets/audio/JEEmMAT3BD8.mp3'),        
+        artist: 'Don genial',       
         answers: [        
         'Liss Yèhoué',        
         'Liss Mouss',        
@@ -1208,8 +1133,7 @@ export const QUIZ = [
         id: 'ELBS_8ckLas',        
         category: 'tradi',        
         title: 'Maman africaine',        
-        artist: 'Sena Noble',        
-        audio: require('../assets/audio/ELBS_8ckLas.mp3'),        
+        artist: 'Sena Noble',       
         answers: [        
         'Maman africaine',        
         'Nanyé',        
@@ -1225,8 +1149,7 @@ export const QUIZ = [
         id: 'mAo8fnKYMyU',        
         category: 'urban',        
         title: 'Tanyi adoho',        
-        artist: 'Viphint ft Zeynab',        
-        audio: require('../assets/audio/mAo8fnKYMyU.mp3'),        
+        artist: 'Viphint ft Zeynab',      
         answers: [        
         'Le mariage',        
         'Tanyi adoho',        
@@ -1243,7 +1166,6 @@ export const QUIZ = [
         category: 'urban',        
         title: 'Les hommes sont des bébés',        
         artist: 'Sweet Glory',        
-        audio: require('../assets/audio/WZb_u-ry-ys.mp3'),        
         answers: [        
         'La solution',        
         'Confiance',        
@@ -1258,8 +1180,7 @@ export const QUIZ = [
         id: 'WsjcXmSNE-A',        
         category: 'urban',        
         title: 'Oun ba wé kpo',        
-        artist: 'Miss Espoir',        
-        audio: require('../assets/audio/WsjcXmSNE-A.mp3'),        
+        artist: 'Miss Espoir',       
         answers: [        
         'Nelly',        
         'Princess charm',        
@@ -1275,8 +1196,7 @@ export const QUIZ = [
         id: 'L5S7ifoZ-Vg',        
         category: 'urban',        
         title: 'Sin tata',        
-        artist: 'Fanny Senan',        
-        audio: require('../assets/audio/L5S7ifoZ-Vg.mp3'),        
+        artist: 'Fanny Senan',         
         answers: [        
         'Sèssime',        
         'La mélodieuse',        
@@ -1291,8 +1211,7 @@ export const QUIZ = [
         id: 'VK1iqLH_9uE',        
         category: 'urban',        
         title: 'Je t aime à la folie',        
-        artist: 'Oluwa Kemy',        
-        audio: require('../assets/audio/VK1iqLH_9uE.mp3'),        
+        artist: 'Oluwa Kemy',       
         answers: [        
         'Mon amour',        
         'Je t aime à la folie',        
@@ -1308,7 +1227,6 @@ export const QUIZ = [
         category: 'urban',
         title: 'Mpenzi',
         artist: 'Faty', 
-        audio: require('../assets/audio/9sHDntv7xwE.mp3'),
         answers: [ 
             'Liss Mousse', 
             'Edwige Hessou', 
@@ -1325,7 +1243,6 @@ export const QUIZ = [
         category: 'tradi',     
         title: 'Hwézan',     
         artist: 'Didolanvi Félix',     
-        audio: require('../assets/audio/zJEq2z7Pfko.mp3'),     
         answers: [     
             'Didolanvi Félix',     
             'Dossou Letrick',     
@@ -1340,8 +1257,7 @@ export const QUIZ = [
         id: 'nne8grzopvo',     
         category: 'urban',     
         title: 'Madame',     
-        artist: 'Queen Fumi',     
-        audio: require('../assets/audio/nne8grzopvo.mp3'), 
+        artist: 'Queen Fumi',
 
         answers: [     
             'Daphné',     
@@ -1357,7 +1273,6 @@ export const QUIZ = [
         category: 'urban',     
         title: 'Aveu',     
         artist: 'Arielle feat Shan L',     
-        audio: require('../assets/audio/xj79aThkHeY.mp3'),     
         answers: [     
             'Daphné',     
             'Princess Sonia',     
@@ -1374,7 +1289,6 @@ export const QUIZ = [
         category: 'urban',        
         title: 'Ziguiditata',        
         artist: 'Ramou',        
-        audio: require('../assets/audio/UxokZKERZQM.mp3'),        
         answers: [        
             'Zeynab',            
             'Ramou',            
@@ -1389,8 +1303,7 @@ export const QUIZ = [
         id: 'p4dl732v_l4',        
         category: 'urban',        
         title: 'Zero',        
-        artist: 'Richard Flash',        
-        audio: require('../assets/audio/p4dl732v_l4.mp3'),        
+        artist: 'Richard Flash',         
         answers: [        
             'Nikanor',            
             'Richard Flash',            
@@ -1406,7 +1319,6 @@ export const QUIZ = [
         category: 'urban',        
         title: 'Mayio',        
         artist: 'Nelly feat Sweet Glory',        
-        audio: require('../assets/audio/WwsK5Y06jwc.mp3'),        
         answers: [        
             'Je t’aime',        
             'Fidélité',        
@@ -1421,9 +1333,7 @@ export const QUIZ = [
         id: 'SdVDwlZHmNQ',        
         category: 'urban',        
         title: 'Zinguidi',        
-        artist: 'Riss cool',        
-        audio: require('../assets/audio/SdVDwlZHmNQ.mp3'),
-        
+        artist: 'Riss cool',         
         answers: [        
             'Agbando',        
             'Zinguidi',        
@@ -1438,9 +1348,7 @@ export const QUIZ = [
         id: '-AH_rTTf3KI',        
         category: 'urban',        
         title: 'gimaplon',        
-        artist: 'GG lapino feat Cesario',        
-        audio: require('../assets/audio/-AH_rTTf3KI.mp3'),
-        
+        artist: 'GG lapino feat Cesario',         
         answers: [        
             'GG lapino feat zebdo',        
             'Blaaz',        
@@ -1455,7 +1363,6 @@ export const QUIZ = [
         category: 'urban',
         title: 'Annie',
         artist: 'Nikanor',
-        audio: require('../assets/audio/xWbLDaouAlg.mp3'),
         answers: [
             'Nikanor',
             'Davibe',
@@ -1469,7 +1376,6 @@ export const QUIZ = [
         category: 'urban',
         title: 'Agba',
         artist: 'First King',
-        audio: require('../assets/audio/rFYNoQVpMRI.mp3'),
         answers: [
             'Dibi Dobo',
             'Togbe Yeton',
@@ -1482,7 +1388,6 @@ export const QUIZ = [
         title: 'Zankounana',
         category: 'urban',
         artist: 'Fanicko',
-        audio: require('../assets/audio/gW93lbDxPMI.mp3'),
         answers: [
             'Tu fais trop la bouche',
             'Zankounana',
@@ -1495,7 +1400,6 @@ export const QUIZ = [
         title: 'Zankounana',
         category: 'urban',
         artist: 'Fanicko',
-        audio: require('../assets/audio/gW93lbDxPMI.mp3'),
         answers: [
             'Blaaz',
             'Nikanor',
@@ -1508,7 +1412,6 @@ export const QUIZ = [
         title: 'Faivi',
         category: 'tradi',
         artist: 'Ricos Campos',
-        audio: require('../assets/audio/aFCa32DPeqk.mp3'),
         answers: [
             'Rabbi Slo',
             'Ricos Campos',
@@ -1521,7 +1424,6 @@ export const QUIZ = [
         category: 'tradi',
         title: 'Faivi',
         artist: 'Ricos Campos',
-        audio: require('../assets/audio/aFCa32DPeqk.mp3'),
         answers: [
             'Zankounana',
             'Gbevoun',
@@ -1534,7 +1436,6 @@ export const QUIZ = [
         category: 'urban',
         title: 'Kôkôkô',
         artist: 'Rabbi Slo',
-        audio: require('../assets/audio/0tGKeEzIZZw.mp3'),
         answers: [
             'Rabbi Slo',
             'Richard Flash',
@@ -1547,7 +1448,6 @@ export const QUIZ = [
         category: 'urban',
         title: 'Kôkôkô',
         artist: 'Rabbi Slo',
-        audio: require('../assets/audio/0tGKeEzIZZw.mp3'),
         answers: [
             'Fifa',
             'Ferme pas',

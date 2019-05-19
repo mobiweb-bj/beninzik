@@ -8,6 +8,7 @@ import Premium from './PremiumComponent'
 // youtube
 import YoutubeHome from './youtube/YoutubeHomeComponent'
 import YoutubePlayer from './youtube/YoutubePlayerComponent'
+import YoutubeSearch from './youtube/YoutubeSearchComponent'
 
 import {ScrollView, StyleSheet, View, Text, Image} from 'react-native'
 import { createStackNavigator, createDrawerNavigator, DrawerItems, SafeAreaView } from 'react-navigation'
@@ -18,11 +19,17 @@ const YoutubeNavigator = createStackNavigator(
     {
         YoutubeHome: {
             screen: YoutubeHome, 
+            navigationOptions: {
+                title: 'BeninZik'
+            },
 
         },
         YoutubePlayer: {
             screen: YoutubePlayer, 
 
+        },
+        YoutubeSearch:{
+            screen: YoutubeSearch
         }
     },
     
@@ -37,8 +44,14 @@ const YoutubeNavigator = createStackNavigator(
             headerLeft: <View style={{margin:7}}><Icon 
                     name="menu" size={24} 
                     color= 'white'
-                    onPress={ () => navigation.toggleDrawer() } /></View> 
-        }),
+                    onPress={ () => navigation.toggleDrawer() } /></View> ,
+            headerRight: <View style={{margin:7}}>
+                            <Icon type='font-awesome' color='white' name='search'
+                                onPress={() => {navigation.navigate('YoutubeSearch')}}
+                                />
+
+                        </View>
+        }),        
         initialRouteName: 'YoutubeHome'
     }
 )
@@ -102,7 +115,7 @@ export const MainNavigator = createDrawerNavigator(
         BeninTube: {
             screen: YoutubeNavigator,
             navigationOptions: {
-                title: 'Benin Tube',
+                title: 'BeninZik',
                 drawerLabel: 'Benin Tube',
                 drawerIcon: () => (<Icon
                     type='font-awesome'
