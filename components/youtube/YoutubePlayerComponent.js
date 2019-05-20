@@ -1,12 +1,14 @@
 import React from 'react'
 import {View, ScrollView, Alert, CameraRoll } from 'react-native'
-import { Audio, FileSystem } from 'expo'
+import { Audio, FileSystem, SQLite } from 'expo'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {  Icon, Text, Card, ListItem } from 'react-native-elements';
 import {Grid, Row, Col} from 'react-native-easy-grid'
 import {colors} from '../../shared/colors'
 
 const soundObject = new Audio.Sound()
+
+const db = SQLite.openDatabase('beninzik')
 
 const AudioItem = (props) => (
 
@@ -47,9 +49,15 @@ class YoutubePlayer extends React.Component {
     }
 
     componentDidMount() {
+        // fetch audios datas
         this.fetchVideos()
 
-        
+        // connect to db / table
+        db.transaction(tx => {
+            tx.executeSql(
+                'create table if not exists favorites (id integer primary key not null, audioId varchar(255))'
+            )
+        })       
     }
 
     
@@ -57,8 +65,81 @@ class YoutubePlayer extends React.Component {
         this.stopAudio()
     }
 
+    addfavorite(id) {
+        db.transaction(tx => {
+            tx.executeSql(
+                'select * from favorites where audioId = (?)',
+                [id],
+                (tx, results) => {
+                    if(results.rows.length > 0) {
 
-    async playAudio(id) {       
+                        Alert.alert('Déjà favori!')
+
+                    } else {
+
+                        tx.executeSql(
+                            'insert into favorites (audioId) values (?)', 
+                            [id],
+                            (tx, results) => {
+                                
+                                Alert.alert('Ajouté aux favoris!')
+
+                            },
+                            (tx, err) => Alert.alert('Erreur ajout aux favoris'),            
+                        )
+                    }
+                
+                },
+                null
+            )
+
+        },
+        null,
+        null
+        )
+    }
+
+
+    async playAudio(id) {    
+
+        /*
+        soundObject.onPlaybackStatusUpdate(async (status) => {
+            if(!status.isLoaded) {
+                try {               
+                    await soundObject.loadAsync(
+                        {uri: 'https://mobiweb.bj/mobileapps/musicQuiz/medias/mp3/'+id+'.mp3'}, 
+                        initialStatus={isLooping:false},
+                        downloadFirst = true)    
+                        
+                        this.setState({audioStatus: '[Chargement en cours...]'})
+                                                
+                } catch(e) {
+
+                    console.log('erreur music')
+
+                }
+            } else {
+
+                if(status.didJustFinish) {
+
+                    await soundObject.unloadAsync()                    
+
+                } else {
+
+                    if(!this.state.isAudioPlaying) {
+
+                        await soundObject.replayAsync()
+
+                    } else {
+
+                        await soundObject.pauseAsync()
+                    }
+                }
+
+                
+            }
+        })
+        */
         
        if(!this.state.isAudioPlaying) {
 
@@ -238,6 +319,7 @@ class YoutubePlayer extends React.Component {
                                 color='orange'
                                 size={15}
                                 raised
+                                onPress={() => this.addfavorite(videoInfos.videoId)}
                             />
                         </Col>
                     </Row>

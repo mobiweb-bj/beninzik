@@ -1,7 +1,7 @@
 import React from 'react'
 import {ScrollView, View, Text, ActivityIndicator} from 'react-native'
 import {Icon, ListItem} from 'react-native-elements'
-import { colors } from '../../shared/colors';
+import { colors } from '../../shared/colors'
 
 const AudioItem = (props) => {
     return (
@@ -42,10 +42,12 @@ class YoutubeLatest extends React.Component {
         .then(data => this.setState({videos:data, loading:false}))
         .catch(err => console.log(err))
     }
+    
 
     componentWillMount() {
         this.fetchVideos()
     }
+
 
     render() { 
         

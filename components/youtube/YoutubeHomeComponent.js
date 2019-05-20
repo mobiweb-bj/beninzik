@@ -6,7 +6,6 @@ import {Icon, ListItem} from 'react-native-elements'
 import { colors } from '../../shared/colors';
 
 
-
 const YoutubeHome = createMaterialTopTabNavigator (
     {
         YoutubeLatest: YoutubeLatest,
