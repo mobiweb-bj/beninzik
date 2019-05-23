@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, ScrollView, Alert, CameraRoll } from 'react-native'
-import { Audio, FileSystem, SQLite } from 'expo'
+import { Audio, FileSystem, SQLite, Permissions, MediaLibrary } from 'expo'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {  Icon, Text, Card, ListItem } from 'react-native-elements';
 import {Grid, Row, Col} from 'react-native-easy-grid'
@@ -58,7 +58,8 @@ class YoutubePlayer extends React.Component {
             tx.executeSql(
                 'create table if not exists favorites (id integer primary key not null, audioId varchar(255))'
             )
-        })       
+        })         
+
     }
 
     
@@ -151,36 +152,42 @@ class YoutubePlayer extends React.Component {
         } 
     }
 
-    downloadAudio(id) {
+    async downloadAudio(id) {  
+        
+        const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL)
 
-        let title = this.getVideoObject(id).title
+        if (status == 'granted') {
 
-        this.setState({audioStatus: '[Téléchargement en cours...]'})
+            let title = this.getVideoObject(id).title
 
-        FileSystem.getInfoAsync(FileSystem.documentDirectory + 'beninzik')
-            .then(res => {
-                if(!res.exists) {
-                    console.log('dossier n existe pas')
-                    FileSystem.makeDirectoryAsync(FileSystem.documentDirectory + 'beninzik')
-                }
-            })
+            this.setState({audioStatus: '[Téléchargement en cours...]'})
 
-        FileSystem.downloadAsync(
-            'http://mobiweb.bj/mobileapps/musicQuiz/medias/mp3/' + id + '.mp3',
-            FileSystem.documentDirectory + 'beninzik/' + title +'.mp3'
-          )
-            .then(({ uri }) => {
-              // Alert.alert('Téléchargement terminé ' + uri);
-              Alert.alert('Téléchargement terminé! (Dossier DCIM : Media-Camera)' )
-              this.setState({audioStatus: 'Téléchargement terminé...'})
-            
-              // save in camera roll
-              CameraRoll.saveToCameraRoll(FileSystem.documentDirectory + 'beninzik/' + title +'.mp3', 'video')
+            FileSystem.getInfoAsync(FileSystem.documentDirectory + 'beninzik')
+                .then(res => {
+                    if(!res.exists) {
+                        console.log('dossier n existe pas')
+                        FileSystem.makeDirectoryAsync(FileSystem.documentDirectory + 'beninzik')
+                    }
+                })
 
-            })
-            .catch(error => {
-              console.error(error);
-            });
+            FileSystem.downloadAsync(
+                'http://mobiweb.bj/mobileapps/musicQuiz/medias/mp3/' + id + '.mp3',
+                FileSystem.documentDirectory + 'beninzik/' + title +'.mp3'
+            )
+                .then(({ uri }) => {
+                // Alert.alert('Téléchargement terminé ' + uri);
+                Alert.alert('Téléchargement terminé! (Dossier DCIM : Media-Camera)' )
+                this.setState({audioStatus: 'Téléchargement terminé...'})
+                
+                // save in camera roll
+                CameraRoll.saveToCameraRoll(FileSystem.documentDirectory + 'beninzik/' + title +'.mp3', 'video')
+
+                })
+                .catch(error => {
+                console.error(error);
+                });
+
+        }        
         
     }
 
@@ -228,20 +235,18 @@ class YoutubePlayer extends React.Component {
             
             if(r != null && this.getVideoObject(r.id) != null) {
                 
-                return (
-                    <View key={this.getVideoObject(r.id).id}>
-                        <AudioItem    
-                                                                           
-                            audio={r}
-                            listen={() => {
-                                this.stopAudio()
-    
-                                this.props.navigation.push('YoutubePlayer', {
-                                    videoInfos: this.getVideoObject(r.id)
-                                })
-                            }}
-                        />  
-                    </View>                                                         
+                return (                   
+                    <AudioItem    
+                        key={this.getVideoObject(r.id).videoId.toString()}                                           
+                        audio={r}
+                        listen={() => {
+                            this.stopAudio()
+
+                            this.props.navigation.push('YoutubePlayer', {
+                                videoInfos: this.getVideoObject(r.id)
+                            })
+                        }}
+                    />                                                                              
                     
                 )
             } else {
@@ -324,7 +329,5 @@ class YoutubePlayer extends React.Component {
         )
     }
 }
-
-
 
 export default YoutubePlayer

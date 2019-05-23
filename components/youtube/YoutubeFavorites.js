@@ -1,7 +1,6 @@
 import React from 'react'
 import {View, Text, ScrollView, Alert, ActivityIndicator} from 'react-native'
 import {ListItem, Icon} from 'react-native-elements'
-import  { Fab } from 'native-base'
 import {SQLite} from 'expo'
 import {colors} from '../../shared/colors'
 
@@ -27,12 +26,11 @@ class YoutubeFavorites extends React.Component {
         fetch('http://mobiweb.bj/mobileapps/musicQuiz/videos.php')
         .then(response => response.json())
         .then(data => this.setState({videos:data}))
+        .then(() => this.getFavorites())
         .catch(err => console.log(err))
     }
 
-    componentDidMount() {
-
-        this.getFavorites()
+    componentDidMount() {        
 
         this.fetchVideos()
         
@@ -96,8 +94,7 @@ class YoutubeFavorites extends React.Component {
 
                 const Audios = () => this.state.favorites.map((favorite, i) => {
 
-                    const audio = this.getVideoObject(favorite.audioId)  
-                    console.log(audio)                  
+                    const audio = this.getVideoObject(favorite.audioId) 
 
                     return (
                         
