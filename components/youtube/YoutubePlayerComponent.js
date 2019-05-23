@@ -31,6 +31,7 @@ class YoutubePlayer extends React.Component {
         super(props)
 
         this.state = {
+            favorites: [],
             videos:[],
             isAudioPlaying: false,
             audioStatus: ''
@@ -83,6 +84,7 @@ class YoutubePlayer extends React.Component {
                             (tx, results) => {
                                 
                                 Alert.alert('Ajouté aux favoris!')
+                                this.getFavorites()
 
                             },
                             (tx, err) => Alert.alert('Erreur ajout aux favoris'),            
@@ -101,45 +103,6 @@ class YoutubePlayer extends React.Component {
 
 
     async playAudio(id) {    
-
-        /*
-        soundObject.onPlaybackStatusUpdate(async (status) => {
-            if(!status.isLoaded) {
-                try {               
-                    await soundObject.loadAsync(
-                        {uri: 'https://mobiweb.bj/mobileapps/musicQuiz/medias/mp3/'+id+'.mp3'}, 
-                        initialStatus={isLooping:false},
-                        downloadFirst = true)    
-                        
-                        this.setState({audioStatus: '[Chargement en cours...]'})
-                                                
-                } catch(e) {
-
-                    console.log('erreur music')
-
-                }
-            } else {
-
-                if(status.didJustFinish) {
-
-                    await soundObject.unloadAsync()                    
-
-                } else {
-
-                    if(!this.state.isAudioPlaying) {
-
-                        await soundObject.replayAsync()
-
-                    } else {
-
-                        await soundObject.pauseAsync()
-                    }
-                }
-
-                
-            }
-        })
-        */
         
        if(!this.state.isAudioPlaying) {
 
@@ -223,6 +186,28 @@ class YoutubePlayer extends React.Component {
 
     getVideoObject (id) {
         return this.state.videos.filter(v => (v.videoId == id))[0]
+    }
+
+    getFavorites() {
+        db.transaction(
+            tx => {
+                tx.executeSql(
+                    'select * from favorites order by id desc',
+                    [],
+                    (tx, results) => {
+                        // console.log(results.rows._array)
+                        this.setState({favorites:results.rows._array})
+                        
+                    },
+                    null
+                )
+
+            },
+
+            null,
+            null
+            
+        )
     }
    
 

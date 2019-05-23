@@ -44,7 +44,7 @@ class YoutubeLatest extends React.Component {
     }
     
 
-    componentWillMount() {
+    componentDidMount() {
         this.fetchVideos()
     }
 
@@ -79,8 +79,21 @@ class YoutubeLatest extends React.Component {
 
             return (
             
-                <ScrollView>
+                <ScrollView style={{padding:8}}>
                     
+                   <View style={{marginTop:16}}>
+                        <Icon 
+                            type='font-awesome'
+                            name='rotate-left'
+                            color={colors.secondaryLight}
+                            onPress={() => {
+                                this.setState({loading:true})
+                                this.fetchVideos()
+                            }}
+                            
+                        />
+                   </View>
+
                     <AudioItems />
     
                 </ScrollView>

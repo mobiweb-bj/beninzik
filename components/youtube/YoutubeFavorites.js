@@ -1,6 +1,7 @@
 import React from 'react'
-import {View, Text, ScrollView, Alert} from 'react-native'
+import {View, Text, ScrollView, Alert, ActivityIndicator} from 'react-native'
 import {ListItem, Icon} from 'react-native-elements'
+import  { Fab } from 'native-base'
 import {SQLite} from 'expo'
 import {colors} from '../../shared/colors'
 
@@ -13,7 +14,8 @@ class YoutubeFavorites extends React.Component {
 
         this.state = {
             videos : [],
-            favorites :[]
+            favorites :[],
+            loading:true
         }
     }
 
@@ -30,13 +32,14 @@ class YoutubeFavorites extends React.Component {
 
     componentDidMount() {
 
-        this.fetchVideos()
-
         this.getFavorites()
+
+        this.fetchVideos()
+        
     }
 
-    componentDidUpdate () {
-        this.getFavorites()
+    componentWillUpdate () {
+       // this.getFavorites()
     }
 
     getVideoObject(id) {
@@ -51,7 +54,8 @@ class YoutubeFavorites extends React.Component {
                     [],
                     (tx, results) => {
                         // console.log(results.rows._array)
-                        this.setState({favorites:results.rows._array})
+                        this.setState({favorites:results.rows._array, loading:false})
+                        
                         
                     },
                     null
@@ -90,14 +94,15 @@ class YoutubeFavorites extends React.Component {
         const FavoritesAudios = () => {
             if(this.state.favorites.length > 0) {
 
-                const Audios = () => this.state.favorites.map(favorite => {
+                const Audios = () => this.state.favorites.map((favorite, i) => {
 
-                    let audio = this.getVideoObject(favorite.audioId)                    
+                    const audio = this.getVideoObject(favorite.audioId)  
+                    console.log(audio)                  
 
                     return (
                         
                         <ListItem
-                            key={audio.id}
+                            key={i}
                             title={audio.title} 
                             
                             leftAvatar={{ source: { uri: 'https://i.ytimg.com/vi/'+ audio.videoId +'/0.jpg' } }}       
@@ -108,7 +113,10 @@ class YoutubeFavorites extends React.Component {
                                     type='font-awesome' 
                                     name='trash' 
                                     color={colors.primaryLight} 
-                                    onPress={() => this.deleteFavorite(audio.videoId)}
+                                    onPress={() => {
+                                        this.deleteFavorite(audio.videoId) 
+                                        this.getFavorites()
+                                    }}
 
                                 />
                             }
@@ -137,11 +145,43 @@ class YoutubeFavorites extends React.Component {
             }
         }
 
+        if(this.state.loading) {
+
+            return(
+                <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+                    <ActivityIndicator />
+                    <Text>Chargement en cours...</Text>
+                </View>
+                
+            )
+
+        } else {
+
+
         return (
             <ScrollView style={{padding:8}}>
+
+                <View style={{marginTop:16}}>
+                    <Icon 
+                        type='font-awesome'
+                        name='rotate-left'
+                        color={colors.secondaryLight}
+                        onPress={() => {
+                            this.setState({loading:true})
+                            
+                            this.getFavorites()
+                        }}
+                        
+                    />
+                </View>
+
                 <FavoritesAudios />
+                    
             </ScrollView>
         )
+
+        }
+
     }
 }
 

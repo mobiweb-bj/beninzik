@@ -10,6 +10,8 @@ import YoutubeHome from './youtube/YoutubeHomeComponent'
 import YoutubePlayer from './youtube/YoutubePlayerComponent'
 import YoutubeSearch from './youtube/YoutubeSearchComponent'
 
+import Radios from './RadiosComponent'
+
 import {ScrollView, StyleSheet, View, Text, Image} from 'react-native'
 import { createStackNavigator, createDrawerNavigator, DrawerItems, SafeAreaView } from 'react-navigation'
 import {Icon} from 'react-native-elements'
@@ -115,6 +117,30 @@ const HomeNavigator = createStackNavigator(
     }
 )
 
+const RadioNavigator = createStackNavigator(
+    {
+        Radios: {
+            screen: Radios,            
+        }
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: colors.primary,
+            },
+            headerTitleStyle: {
+                color: colors.defaultTextColor
+            },
+            headerLeft: <View style={{margin:7}}><Icon 
+                    name="menu" size={24} 
+                    color= 'white'
+                    onPress={ () => navigation.toggleDrawer() } /></View> 
+            
+        }),
+    }
+    
+)
+
 
 
 const drawerHeader = (props) => (
@@ -137,10 +163,10 @@ export const MainNavigator = createDrawerNavigator(
             screen: YoutubeNavigator,
             navigationOptions: {
                 title: 'BeninZik',
-                drawerLabel: 'Benin Tube',
+                drawerLabel: 'BeninZik',
                 drawerIcon: () => (<Icon
                     type='font-awesome'
-                    name='play'
+                    name='music'
                     />)
             }
         },
@@ -156,6 +182,19 @@ export const MainNavigator = createDrawerNavigator(
                     />)
             }
         },
+
+        Radios: {
+            screen: RadioNavigator,
+            navigationOptions: {
+                title: 'Radio',
+                drawerLabel: 'RadioZik',
+                drawerIcon: () => (
+                    <Icon type='font-awesome'
+                        name='music'
+                    />
+                )
+            }
+        }
         
     },
     {
