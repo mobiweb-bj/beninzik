@@ -1,5 +1,6 @@
 import React from 'react'
 import {View, Text, ScrollView, Alert, ActivityIndicator} from 'react-native'
+import Ad from '../AdComponent'
 import {ListItem, Icon} from 'react-native-elements'
 import {SQLite} from 'expo'
 import {colors} from '../../shared/colors'
@@ -146,6 +147,19 @@ class YoutubeFavorites extends React.Component {
 
             return(
                 <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+                    <View style={{marginTop:16}}>
+                        <Icon 
+                            type='font-awesome'
+                            name='rotate-left'
+                            color={colors.secondaryLight}
+                            onPress={() => {
+                                this.setState({loading:true})
+                                
+                                this.getFavorites()
+                            }}
+                            
+                        />
+                    </View>
                     <ActivityIndicator />
                     <Text>Chargement en cours...</Text>
                 </View>
@@ -158,7 +172,7 @@ class YoutubeFavorites extends React.Component {
         return (
             <ScrollView style={{padding:8}}>
 
-                <View style={{marginTop:16}}>
+                <View style={{marginTop: 16}}>
                     <Icon 
                         type='font-awesome'
                         name='rotate-left'
@@ -171,6 +185,10 @@ class YoutubeFavorites extends React.Component {
                         
                     />
                 </View>
+
+                <View style={{marginTop: 16, marginBottom:16}}>
+                    <Ad />
+                 </View>
 
                 <FavoritesAudios />
                     

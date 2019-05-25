@@ -1,5 +1,6 @@
 import React from 'react'
 import {View, Text, ScrollView} from 'react-native'
+import Ad from '../AdComponent'
 import {SearchBar, ListItem, Icon} from 'react-native-elements'
 import { colors } from '../../shared/colors';
 
@@ -103,12 +104,17 @@ class YoutubeSearch extends React.Component {
                         inputContainerStyle={{backgroundColor:'white', borderWidth:0}}
                     />
                 </View>
+
+                <View style={{marginTop: 16}}>
+                    <Ad />
+                 </View>
                 
                 <View style={{marginTop:16}}>
 
                     <SearchResults />
 
                 </View>
+
             </ScrollView>
         )
     }

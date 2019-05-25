@@ -34,25 +34,7 @@ class Premium extends React.Component {
                 />
                 <ListItem
                     key={2}
-                    title='+ 500 questions supplémentaires'
-                    leftIcon={<Icon name='check' />}
-                    bottomDivider={true}
-                    chevron={true}
-                     
-                />
-
-                <ListItem
-                    key={3}
-                    title='Jouer par catégorie de chansons'
-                    leftIcon={<Icon name='check' />}
-                    bottomDivider={true}
-                    chevron={true}
-                     
-                />
-
-                <ListItem
-                    key={4}
-                    title='Mode expert (chrono)'
+                    title='+ 1000 chansons supplémentaires'
                     leftIcon={<Icon name='check' />}
                     bottomDivider={true}
                     chevron={true}
@@ -63,6 +45,11 @@ class Premium extends React.Component {
                     title='Activer Version Premium'
                     onPress={() => {Alert.alert("Bientôt disponible"); /*this.props.navigation.navigate('Membership')*/}}
                     buttonStyle={{marginTop: 32, width: 200, alignSelf:'center', backgroundColor: colors.secondary}}
+                />
+                <Button
+                    title='Retour'
+                    onPress={() => {this.props.navigation.navigate('YoutubeHome')}}
+                    buttonStyle={{marginTop: 32, width: 200, alignSelf:'center', backgroundColor: colors.black}}
                 />
             </View>
             

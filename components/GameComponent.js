@@ -316,10 +316,10 @@ class Game extends React.Component {
                                 buttonStyle={{backgroundColor:colors.secondary, margin: 16}}
                             />
                             <Button
-                                title='Version Premium'
+                                title='Quitter'
                                 onPress={() => {
                                     this.setState({gameOverModal: false})
-                                    this.props.navigation.navigate('Premium')
+                                    this.props.navigation.navigate('YoutubeHome')
                                 }}
                                 buttonStyle={{backgroundColor:colors.primaryLight, margin: 16}}
                             />                            

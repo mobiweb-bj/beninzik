@@ -1,6 +1,7 @@
 import React from 'react'
 import {View, Text, ActivityIndicator} from 'react-native'
-import {Audio} from 'expo'
+import Ad from './AdComponent'
+import {Audio, KeepAwake } from 'expo'
 import {Icon} from 'react-native-elements'
 import {colors} from '../shared/colors'
 
@@ -115,8 +116,9 @@ class Radios extends React.Component {
         } else {
             return (
                 <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
+                    <KeepAwake />
                     <Text>{this.state.title}</Text>
-                    <View style={{margin:8}}>
+                    <View style={{margin:16}}>
                         
                         <Icon
                             type='font-awesome'
@@ -138,7 +140,7 @@ class Radios extends React.Component {
                         />
                         
                     </View>
-                    <View style={{margin:8}}>
+                    <View style={{margin:16}}>
                         <Icon
                             type='font-awesome'
                             name='sign-out'
@@ -146,10 +148,14 @@ class Radios extends React.Component {
                             size={30}
                             onPress={async () => {
                                 this.setState({isAudioPlaying:false})
+                                
                                 this.props.navigation.navigate('YoutubeHome')
                             }}
                         />
                     </View>
+                    <View style={{marginTop: 32}}>
+                    <Ad />
+                 </View>
                 </View>
             )
         }

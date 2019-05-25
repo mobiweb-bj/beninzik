@@ -1,6 +1,7 @@
 import React from 'react'
 import {ScrollView, View, Text, ActivityIndicator} from 'react-native'
 import {Icon, ListItem} from 'react-native-elements'
+import Ad from '../AdComponent'
 import { colors } from '../../shared/colors'
 
 const AudioItem = (props) => {
@@ -39,7 +40,10 @@ class YoutubeLatest extends React.Component {
     fetchVideos() {
         fetch('http://mobiweb.bj/mobileapps/musicQuiz/videos.php')
         .then(response => response.json())
-        .then(data => this.setState({videos:data, loading:false}))
+        .then(data => {
+            this.setState({videos:data, loading:false})
+            console.log(data.length)
+        })
         .catch(err => console.log(err))
     }
     
@@ -69,19 +73,7 @@ class YoutubeLatest extends React.Component {
 
             return(
                 <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-                    <ActivityIndicator />
-                    <Text>Chargement en cours...</Text>
-                </View>
-                
-            )
-
-        } else {
-
-            return (
-            
-                <ScrollView style={{padding:8}}>
-                    
-                   <View style={{marginTop:16}}>
+                    <View style={{marginBottom:16}}>
                         <Icon 
                             type='font-awesome'
                             name='rotate-left'
@@ -94,7 +86,40 @@ class YoutubeLatest extends React.Component {
                         />
                    </View>
 
+                    <ActivityIndicator />
+                    <Text>Chargement en cours...</Text>
+                </View>
+                
+            )
+
+        } else {
+
+            return (
+            
+                <ScrollView style={{padding:8}}>  
+                    <View style={{marginTop:16}}>
+                        <Icon 
+                            type='font-awesome'
+                            name='rotate-left'
+                            color={colors.secondaryLight}
+                            onPress={() => {
+                                this.setState({loading:true})
+                                this.fetchVideos()
+                            }}
+                            
+                        />
+                   </View>
+
+                   <View style={{marginTop: 16}}>
+                        <Ad />
+                    </View>
+
                     <AudioItems />
+
+                    <View style={{marginTop: 16, marginBottom:16}}>
+                        <Ad />
+                    </View>
+
     
                 </ScrollView>
             )

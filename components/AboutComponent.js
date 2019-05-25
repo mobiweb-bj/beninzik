@@ -63,7 +63,7 @@ class About extends React.Component {
                             )
                         }}
                     />
-                
+                    {/*
                     <Button
                         title='Version Premium'
                         buttonStyle={{margin: 8, backgroundColor:colors.primaryLight, width:150}}
@@ -71,6 +71,8 @@ class About extends React.Component {
                             this.props.navigation.navigate('Premium')
                         }}
                     />
+                    */}
+
                 </Row>
   
             </Container>

@@ -1,6 +1,7 @@
 import React from 'react'
-import {View, ScrollView, Alert, CameraRoll } from 'react-native'
-import { Audio, FileSystem, SQLite, Permissions, MediaLibrary } from 'expo'
+import {View, ScrollView, Alert, CameraRoll, Share } from 'react-native'
+import Ad from '../AdComponent'
+import { Audio, FileSystem, SQLite, Permissions, KeepAwake } from 'expo'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {  Icon, Text, Card, ListItem } from 'react-native-elements';
 import {Grid, Row, Col} from 'react-native-easy-grid'
@@ -237,7 +238,7 @@ class YoutubePlayer extends React.Component {
                 
                 return (                   
                     <AudioItem    
-                        key={this.getVideoObject(r.id).videoId.toString()}                                           
+                        key={this.getVideoObject(r.id).id}                                           
                         audio={r}
                         listen={() => {
                             this.stopAudio()
@@ -262,7 +263,7 @@ class YoutubePlayer extends React.Component {
 
         return(
             <ScrollView>
-
+                <KeepAwake />
                 <Card 
                     image={{uri: 'https://i.ytimg.com/vi/'+ videoInfos.videoId +'/0.jpg'}} >                                                   
                 
@@ -312,9 +313,34 @@ class YoutubePlayer extends React.Component {
                                 onPress={() => this.addfavorite(videoInfos.videoId)}
                             />
                         </Col>
+                        <Col>
+                            <Icon
+                                type='font-awesome'
+                                name='share'
+                                color='blue'
+                                size={15}
+                                raised
+                                onPress={async () => {
+                                    let msg = "Toute la musique béninoise est disponible sur l'application BeninZik.\n\n\n Télécharge gratuitement et  écoute : " + videoInfos.title + "\n\n";
+                                    let url = 'http://mobiweb.bj'
+                                    
+                                    await Share.share(
+                                        {
+                                            message: msg + url,
+                                            title: 'BeninZik',                                        
+                                            url:url
+                                        },
+                                        {
+                                            dialogTitle: 'BeninZik'
+                                        }
+                                    ).catch(e => console.log(e))
+                                }}
+                            />
+                        </Col>
                     </Row>
  
                 </Card>
+
                 <View style={{marginTop:50}}>
 
                     <Card title='Musiques similaires'>
@@ -323,6 +349,10 @@ class YoutubePlayer extends React.Component {
 
                     </Card>
                 </View>
+
+                <View style={{marginTop: 16, marginBottom:16}}>
+                    <Ad />
+                 </View>
                 
                        
             </ScrollView>

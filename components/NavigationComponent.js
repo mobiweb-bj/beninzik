@@ -148,7 +148,7 @@ const drawerHeader = (props) => (
       <SafeAreaView style={{flex:1, marginTop:-25}} forceInset={{ top: 'always', horizontal: 'never' }}>
         <View style={styles.drawerHeader}>
           <View style={{flex:1}}>
-            <Image source={require('../assets/logo.png')} style={styles.drawerImage} />
+            <Image source={require('../assets/beninzik.png')} style={styles.drawerImage} />
           </View>
           
         </View>
@@ -212,7 +212,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     drawerImage: {
-        width:100,
-        height: 100
+        marginTop:8,
+        width:120,
+        height: 120
     }
 })

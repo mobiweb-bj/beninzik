@@ -14,13 +14,11 @@ class Home extends React.Component {
 
 
     render (){
-
-        const AUDIO_CLIP_URL = "../assets/audio/rabbislo.mp3"
         
         return(
             <ScrollView>
                 <Image
-                    source={require('../assets/logo.png')}
+                    source={require('../assets/musicquiz.png')}
                     style={styles.logo}
                     />
                 
