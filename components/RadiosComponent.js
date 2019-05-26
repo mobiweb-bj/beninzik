@@ -1,5 +1,6 @@
 import React from 'react'
 import {View, Text, ActivityIndicator} from 'react-native'
+import * as Animatable from 'react-native-animatable'
 import Ad from './AdComponent'
 import {Audio, KeepAwake } from 'expo'
 import {Icon} from 'react-native-elements'
@@ -117,7 +118,9 @@ class Radios extends React.Component {
             return (
                 <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
                     <KeepAwake />
-                    <Text>{this.state.title}</Text>
+                    <Animatable.Text animation="pulse" easing="ease-out" iterationCount="infinite">
+                        {this.state.title}
+                    </Animatable.Text>
                     <View style={{margin:16}}>
                         
                         <Icon

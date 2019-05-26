@@ -1,6 +1,7 @@
 import React from 'react'
 import {ScrollView, View, Text, ActivityIndicator} from 'react-native'
 import {Icon, ListItem} from 'react-native-elements'
+import * as Animatable from 'react-native-animatable'
 import Ad from '../AdComponent'
 import { colors } from '../../shared/colors'
 
@@ -113,8 +114,11 @@ class YoutubeLatest extends React.Component {
                    <View style={{marginTop: 16}}>
                         <Ad />
                     </View>
-
-                    <AudioItems />
+                    
+                    <Animatable.View animation='zoomIn' duration={1000} delay={1000}>
+                        <AudioItems />
+                    </Animatable.View>
+                    
 
                     <View style={{marginTop: 16, marginBottom:16}}>
                         <Ad />

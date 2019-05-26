@@ -7,7 +7,7 @@ class Ad extends React.Component {
             
             <AdMobBanner
                 bannerSize="smartBannerPortrait"
-                adUnitID="ca-app-pub-6801044127843086/3363014104" // Test ID, Replace with your-admob-unit-id
+                adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
                 testDeviceID="EMULATOR"
                 onDidFailToReceiveAdWithError={this.bannerError} 
             />

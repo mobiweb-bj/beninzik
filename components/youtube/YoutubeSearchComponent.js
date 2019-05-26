@@ -100,7 +100,7 @@ class YoutubeSearch extends React.Component {
                             this.searchAudio(text)
                         }}
                         value={this.state.searchText}
-
+                        containerStyle={{backgroundColor:colors.secondaryDark, borderColor:colors.secondaryDark}}
                         inputContainerStyle={{backgroundColor:'white', borderWidth:0}}
                     />
                 </View>
