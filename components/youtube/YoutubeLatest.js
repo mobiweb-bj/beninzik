@@ -1,5 +1,5 @@
 import React from 'react'
-import {ScrollView, View, Text, ActivityIndicator} from 'react-native'
+import {ScrollView, View, Text, ActivityIndicator, NetInfo, Alert} from 'react-native'
 import {Icon, ListItem} from 'react-native-elements'
 import * as Animatable from 'react-native-animatable'
 import Ad from '../AdComponent'
@@ -50,7 +50,19 @@ class YoutubeLatest extends React.Component {
     
 
     componentDidMount() {
-        this.fetchVideos()
+
+        NetInfo.getConnectionInfo()
+            .then((connectionInfo) => {
+               // console.log('Initial, type: ' + connectionInfo.type )
+
+               if(connectionInfo.type != 'none') {
+                    this.fetchVideos()
+               } else {
+                    Alert.alert('Aucune connexion internet détectée')
+               }
+            })
+
+        
     }
 
 
